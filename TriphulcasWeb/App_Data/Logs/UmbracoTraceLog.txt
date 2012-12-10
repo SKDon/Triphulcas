@@ -147,3 +147,4 @@ System.ApplicationException: Cannot switch to Live Editmode when user is not log
 2012-12-10 14:19:24,512 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
 2012-12-10 14:19:24,513 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree (took 1ms)
 2012-12-10 14:19:24,543 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 653ms)
+2012-12-10 16:14:58,858 [7] INFO  Umbraco.Web.UmbracoApplication - [Thread 38] Application shutdown. Reason: HostingEnvironment
