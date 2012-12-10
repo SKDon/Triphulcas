@@ -5,6 +5,7 @@ using System.Web.Script.Serialization;
 using System.Security.Principal;
 
 using Umbraco.Web;
+using umbraco.BusinessLogic;
 
 namespace TriphulcasLib
 {
@@ -38,6 +39,9 @@ namespace TriphulcasLib
             roles = null;
 
             lock(locker) {
+
+                //if (Membership.ValidateUser(model.UniqueLink,model.AccesToken)) {
+
                 var col = Membership.FindUsersByName(model.UniqueLink);
                 if (col != null && col.Count > 0)
                     foreach (MembershipUser user in col)
@@ -81,7 +85,7 @@ namespace TriphulcasLib
                 MembershipUser mUser = null;
                 string[] roles = null;
 
-                mUser = Authorize(model, out roles);
+                mUser = Authorize(model, out roles);                
 
                 // Create the IPrinciple instance
                 IPrincipal principal = new FacebookPrincipal(model.UserName, roles)
@@ -95,6 +99,14 @@ namespace TriphulcasLib
 
                 // Set the context user 
                 context.User = principal;
+
+                if (principal.IsInRole("Triphulcas"))
+                {
+                    //if (String.IsNullOrEmpty(umbraco.BasePages.BasePage.umbracoUserContextID))
+                    if (umbraco.BasePages.UmbracoEnsuredPage.CurrentUser == null)
+                        // Hack. Set the Umbraco backoffice related user as logged - in
+                        umbraco.BasePages.BasePage.doLogin(new User("triphulca"));
+                }
             }
         }
 
