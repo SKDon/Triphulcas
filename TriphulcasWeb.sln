@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\", "{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{54e665be-93c7-40cf-84f2-d7ed6b8690f6}|TriphulcasMvc.dll;{2ad1e6d7-eee0-4ef5-968f-98ef4c43b35e}|TriphulcasLib.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/TriphulcasWeb"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TriphulcasWeb\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/TriphulcasWeb"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TriphulcasWeb\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2759"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriphulcasMvc", "TriphulcasMvc\TriphulcasMvc.csproj", "{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriphulcasLib", "TriphulcasLib\TriphulcasLib.csproj", "{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+	<files><file><guid>9848f179-afec-4d10-8678-d5e98ac6f2e2.dll</guid><orgPath>/bin</orgPath><orgName>Our.Umbraco.DisableTimeout.dll</orgName></file></files>
+	<info>
+		<package>
+			<name>Disable BackOffice Timeout</name>
+			<version>1.0</version>
+			<license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+			<url>http://our.umbraco.org/projects/backoffice-extensions/disable-backoffice-timeout</url>
+			<requirements>
+				<major>4</major>
+				<minor>7</minor>
+				<patch>0</patch>
+			</requirements>
+		</package>
+		<author>
+			<name>Lee Kelleher</name>
+			<website>http://leekelleher.com</website>
+		</author>
+		<readme><![CDATA[Getting tired of timeouts in the Umbraco back-office? Sick of the login overlay prompt? Wish it would just disappear whilst you are developing your website?
+There is a solution... The Disable BackOffice Timeout package!
+Simply install the package, set the "umbracoDisableTimeout" AppSettings key in your Web.config and... Ta-dah! No more login prompts!
+Ideally this package should only be used in a development environment.
+What does the package actually do?
+The package will register a HttpModule that applies a Response Filter to comment out a single line of JavaScript from the "~/umbraco/umbraco.aspx" page.
+This results in disabling any calls to the "GetSecondsBeforeUserLogout" web-service - which would usually log you out after the set inactivity period.
+Uninstalling the package will remove both the HttpModule and AppSettings key, reverting your Umbraco install back to normal.]]></readme>
+	</info>
+	<DocumentTypes />
+	<Templates />
+	<Stylesheets />
+	<Macros />
+	<DictionaryItems />
+	<Languages />
+	<DataTypes />
+	<Actions>
+		<Action runat="install" undo="true" alias="DisableTimeout_AddAppConfigKey" key="umbracoDisableTimeout" value="true" />
+	</Actions>
+</umbPackage>

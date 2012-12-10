@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>Axendo.Umb.DisabledProperties.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Axendo.Umb.DisabledProperties.dll</orgName>
+    </file>
+    <file>
+      <guid>EditNodeTypeProperties.aspx</guid>
+      <orgPath>/AxendoDisabledProperties</orgPath>
+      <orgName>EditNodeTypeProperties.aspx</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Axendo Disabled Properties</name>
+      <version>1.0</version>
+      <license url="http://www.axendo.nl">Axendo</license>
+      <url>.</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Ron Brouwer - Axendo</name>
+      <website>http://www.axendo.nl</website>
+    </author>
+    <readme><![CDATA[]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <Actions>
+    <Action runat="install" alias="addApplicationTree" silent="false" initialize="true" sortOrder="10" applicationAlias="users" treeAlias="disableProperties" treeTitle="Disable properties" iconOpened=".sprTreeFolder_o" iconClosed=".sprTreeFolder" assemblyName="Axendo.Umb.DisabledProperties" treeHandlerType="NodeTypes" action="" />
+  </Actions>
+</umbPackage>

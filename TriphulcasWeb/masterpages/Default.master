@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/HomePage.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="Head" runat="server">
+
+<div id="masthead">
+<%--    <div id="slogan">
+        <p class="engraved">Simplify dynamic JavaScript UIs by applying the Model-View-View Model (MVVM) pattern</p>
+        <a class="download-button" href="http://github.com/downloads/SteveSanderson/knockout/knockout-2.2.0.js">
+            <p>Download</p>
+            <p class="smallprint">v2.2.0 - 14kb min+gz</p>
+        </a>
+    </div>--%>
+    <img src="img/ko-logo.png" />
+</div>
+
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="Main" runat="server">
+	
+<umbraco:Macro Alias="IconsSnippet" runat="server"></umbraco:Macro>
+
+<div class="floatLeft">
+    <div class="sticker" style="width: 380px">
+        <div class="stickerHeading titillium">
+            <h1>More features</h1>
+        </div>
+        <ul class="tickIcons">
+            <li>Free, open source (<a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>)</li>
+            <li>Pure JavaScript &mdash; works with any web framework</li>
+            <li>
+                Small & lightweight &mdash; 40kb minified
+                <p class="smallprint">... reduces to 14kb when using HTTP compression</p>
+            </li>
+            <li>No dependencies</li>            
+            <li>
+                Supports all mainstream browsers
+                <p class="smallprint">IE 6+, Firefox 2+, Chrome, Opera, Safari (desktop/mobile)</p>
+            </li>
+            <li>
+                Fully documented
+                <p class="smallprint">API docs, live examples, and interactive tutorials included</p>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sticker" style="width: 380px">
+        <div class="stickerHeading titillium">
+            <h1>Get started</h1>
+        </div>
+        <ul class="stickerList">
+            <li>
+                <a href="http://learn.knockoutjs.com">Interactive tutorials</a>
+                <p class="smallprint">Learn the easy way with an in-browser code editor</p>
+            </li>
+            <li>
+                <a href="http://channel9.msdn.com/Events/MIX/MIX11/FRM08">20-minute demo video</a>
+                <p>
+                    <a href="http://channel9.msdn.com/Events/MIX/MIX11/FRM08">
+                        <img src="img/mixVideo.jpg" width="320" height="145" style="display: block; margin: 1em auto"/>
+                    </a>
+                </p>
+                <p class="smallprint">Grab a coffee and watch this fast-paced introductory session, filmed at the 2011 MIX conference.</p>
+            </li>
+            <li>
+                <a href="documentation/introduction.html">Introduction to Knockout</a>
+                <p class="smallprint">Tutorial, benefits, comparisons with other frameworks</p>
+            </li>
+            <li>
+                <a href="http://www.pluralsight-training.net/microsoft/Courses/TableOfContents?courseName=knockout-mvvm">PluralSight Knockout.js training course</a>
+                <p class="smallprint">Nearly 5 hours of online video content by John Papa (<a href="http://johnpapa.net/komvvm">more info</a>)</p>
+            </li>
+            <li>
+                <a href="documentation/observables.html#mvvm_and_view_models">Introduction to the Model-View-View Model pattern</a>
+                <p class="smallprint">How KO enables it with observables and computed properties</p>
+            </li>
+            <li>
+                <a href="examples/">More live examples</a>
+            </li>           	
+            <li>
+                <a href="documentation/links.html">External links and blog posts</a>
+            </li>        	
+            <li>
+                <a href="http://github.com/SteveSanderson/knockout/">Source code on Github</a>
+            </li>
+        </ul>
+    </div>    
+</div>	
+
+<umbraco:Macro RightSide="1" Width="494" Alias="Snippet" runat="server"></umbraco:Macro>	
+        
+<div class="sticker floatRight homepageExample" style="width:494px">
+    <div class="stickerHeading titillium">
+        <h1>Live example</h1>
+    </div>
+    <h2>Run it:</h2>
+<div id="liveExample" class="liveExample">
+    <p>
+    Choose a ticket class:
+    <select data-bind="options: tickets, 
+                       optionsCaption: 'Choose...',
+                       optionsText: 'name',
+                       value: chosenTicket"></select>
+                       
+    <button data-bind="enable: chosenTicket, 
+                       click: resetTicket">Clear</button>
+    </p>                   
+    <p data-bind="with: chosenTicket">
+        You have chosen <b data-bind="text: name"></b>
+        ($<span data-bind="text: price"></span>)    
+    </p>
+    
+    <script type="text/javascript">
+        function TicketsViewModel() {
+            this.tickets = [
+                { name: "Economy", price: 199.95 },
+                { name: "Business", price: 449.22 },
+                { name: "First Class", price: 1199.99 }
+            ];
+            this.chosenTicket = ko.observable();
+            this.resetTicket = function() { this.chosenTicket(null) }
+        }
+        ko.applyBindings(new TicketsViewModel(), document.getElementById("liveExample"));
+    </script>	
+</div>
+
+<h2>Source code:</h2>
+<img src="img/homepage-example.png" />
+    <p>By encapsulating data and behavior into a view model, you get a clean, extensible foundation on which to build sophisticated UIs without getting lost in a tangle of event handlers and manual DOM updates.</p>
+</div>
+
+</asp:Content>
