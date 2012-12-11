@@ -6,6 +6,7 @@ using System.Web;
 using umbraco.NodeFactory;
 using umbraco.interfaces;
 using TriphulcasLib;
+using umbraco.cms.businesslogic.web;
 
 namespace TriphulcasLib.UI
 {
@@ -41,8 +42,8 @@ namespace TriphulcasLib.UI
         {
             get
             {
-                IProperty property = Node.GetCurrent().GetProperty("public");
-                return property != null && property.Value != "";
+                var property = new Document(Node.getCurrentNodeId()).getProperty("public");
+                return property != null && property.Value.ToString() == "1";
             }
         }
 
@@ -51,6 +52,14 @@ namespace TriphulcasLib.UI
             get
             {
                 return umbraco.presentation.UmbracoContext.Current.LiveEditingContext.Enabled;
+            }
+        }
+
+        public bool IsTrashed
+        {
+            get
+            {
+                return new Document(Node.getCurrentNodeId()).IsTrashed;
             }
         }
     }

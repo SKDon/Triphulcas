@@ -9,9 +9,6 @@ using umbraco.IO;
 namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
 {
     [ClientDependency(200, ClientDependencyType.Javascript, "LiveEditing/Modules/UnpublishModule/UnpublishModule.js", "UmbracoRoot")]
-    //Next two attributes: added to be able to comment out CreateModule (which already defines those dependencies)
-    [ClientDependency(200, ClientDependencyType.Javascript, "modal/modal.js", "UmbracoClient")]
-    [ClientDependency(200, ClientDependencyType.Css, "modal/style.css", "UmbracoClient")]
     public class UnpublishModule : BaseModule
     {
         protected ImageButton m_UnpublishButton;
@@ -72,7 +69,7 @@ namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
             m_UnpublishButton = new ImageButton();
             m_UnpublishButton.ID = "LeUnpublishButton";
             m_UnpublishButton.CssClass = "button";
-            m_UnpublishButton.ToolTip = "Unpublish";
+            m_UnpublishButton.ToolTip = ui.GetText("unPublish");
             m_UnpublishButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/UnpublishModule/unpublish.png", SystemDirectories.Umbraco);
             m_UnpublishButton.Visible = UmbracoContext.Current.HasPermission(ActionUnPublish.Instance.Letter);
             m_UnpublishButton.OnClientClick = "jQuery('#" + m_UnpublishModal.ClientID + @"').ModalWindowShowWithoutBackground('" + ui.GetText("unPublish") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
@@ -92,8 +89,12 @@ namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
             {
                 case "unpublishcontent":
                     Document currentPage = new Document(int.Parse(UmbracoContext.Current.PageId.ToString()));
-                    library.UnPublishSingleNode(currentPage.Id);
-                    currentPage.UnPublish();
+                    //library.UnPublishSingleNode(currentPage.Id);
+                    //currentPage.UnPublish();
+
+                    //Unpublish (triphulcas way)
+                    currentPage.SetProperty("public", 0);
+
                     string redirectUrl = "/";
                     try
                     {
@@ -102,6 +103,9 @@ namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
                     catch
                     {
                     }
+
+                    //disable live editing:
+                    UmbracoContext.Current.LiveEditingContext.Enabled = false;
 
                     Page.Response.Redirect(redirectUrl);
                     break;

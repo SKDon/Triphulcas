@@ -9,6 +9,9 @@ using umbraco.IO;
 namespace umbraco.presentation.LiveEditing.Modules.DeleteModule
 {
     [ClientDependency(200, ClientDependencyType.Javascript, "LiveEditing/Modules/DeleteModule/DeleteModule.js", "UmbracoRoot")]
+    //Next two attributes: added to be able to comment out CreateModule (which already defines those dependencies)
+    [ClientDependency(200, ClientDependencyType.Javascript, "modal/modal.js", "UmbracoClient")]
+    [ClientDependency(200, ClientDependencyType.Css, "modal/style.css", "UmbracoClient")]
     public class DeleteModule : BaseModule
     {
         protected ImageButton m_DeleteButton;
@@ -85,6 +88,12 @@ namespace umbraco.presentation.LiveEditing.Modules.DeleteModule
                     catch { }
                     library.UnPublishSingleNode(currentPage.Id);
                     currentPage.delete();
+                    //Unpublish (triphulcas way)
+                    currentPage.SetProperty("public", 0);
+
+                    //disable live editing:
+                    UmbracoContext.Current.LiveEditingContext.Enabled = false;
+
                     Page.Response.Redirect(redirectUrl);
                     break;
             }

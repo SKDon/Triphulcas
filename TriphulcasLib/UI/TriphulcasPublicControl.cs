@@ -10,10 +10,13 @@ namespace TriphulcasLib.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((!IsLiveEditing && IsPublic) || (IsLiveEditing && IsPreview))
-                this.Visible = true;
-            else
+            if (IsTrashed)
                 this.Visible = false;
+            else
+                if ((!IsLiveEditing && IsPublic) || (IsLiveEditing && IsPreview))
+                    this.Visible = true;
+                else
+                    this.Visible = false;
         }
     }
 }

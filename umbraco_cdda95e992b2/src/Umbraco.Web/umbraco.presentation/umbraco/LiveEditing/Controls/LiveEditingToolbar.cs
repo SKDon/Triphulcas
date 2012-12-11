@@ -48,6 +48,7 @@ namespace umbraco.presentation.LiveEditing.Controls
         private readonly Button m_CloseButton = new Button();
         private readonly Panel m_MenuItemsPanel = new Panel();
         private readonly Button m_BackToBackendButton = new Button();
+        private BaseModule m_unpublishedButton = null;
 
         #endregion
 
@@ -88,7 +89,14 @@ namespace umbraco.presentation.LiveEditing.Controls
             m_Manager.LiveEditingContext.Menu.Add(new Separator());
             m_Manager.LiveEditingContext.Menu.Add(new ItemEditor(m_Manager));
             //m_Manager.LiveEditingContext.Menu.Add(new CreateModule(m_Manager));
-            m_Manager.LiveEditingContext.Menu.Add(new UnpublishModule(m_Manager));
+
+            var isPublic = new Document(NodeFactory.Node.getCurrentNodeId()).getProperty("public");
+            //triphulcas way of publishing
+            if (isPublic != null && isPublic.Value.ToString() == "1")
+            {
+                m_unpublishedButton = new UnpublishModule(m_Manager);
+                m_Manager.LiveEditingContext.Menu.Add(m_unpublishedButton);
+            }
             m_Manager.LiveEditingContext.Menu.Add(new DeleteModule(m_Manager));
             //m_Manager.LiveEditingContext.Menu.Add(new MacroModule(m_Manager));
 
@@ -160,7 +168,7 @@ namespace umbraco.presentation.LiveEditing.Controls
             // create save button
             m_MainPanel.ContentTemplateContainer.Controls.Add(m_SaveButton);
             m_SaveButton.CssClass = "button";
-            m_SaveButton.ToolTip = "Save";
+            m_SaveButton.ToolTip = ui.GetText("save");
             m_SaveButton.ImageUrl = String.Format("{0}/images/editor/Save.gif", SystemDirectories.Umbraco);
             m_SaveButton.Click += new ImageClickEventHandler(SaveButton_Click);
             m_SaveButton.OnClientClick = "return LiveEditingToolbar._save()";
@@ -169,7 +177,7 @@ namespace umbraco.presentation.LiveEditing.Controls
             // create save and publish button
             m_MainPanel.ContentTemplateContainer.Controls.Add(m_SaveAndPublishButton);
             m_SaveAndPublishButton.CssClass = "button";
-            m_SaveAndPublishButton.ToolTip = "Save and publish";
+            m_SaveAndPublishButton.ToolTip = ui.GetText("saveAndPublish");
             m_SaveAndPublishButton.ImageUrl = String.Format("{0}/images/editor/SaveAndPublish.gif", SystemDirectories.Umbraco);
             m_SaveAndPublishButton.Click += new ImageClickEventHandler(SaveAndPublishButton_Click);
             m_SaveAndPublishButton.OnClientClick = "return LiveEditingToolbar._saveAndPublish()";
@@ -256,8 +264,15 @@ namespace umbraco.presentation.LiveEditing.Controls
             //m_Manager.DisplayUserMessage("Page saved", "The page was saved successfully. Remember to publish your changes.", "info");
 
             //This marks as "unpublished" in Triphulcas:
-            if (NodeFactory.Node.GetCurrent().GetProperty("public") != null)
-                NodeFactory.Node.GetCurrent().SetProperty("public", 0);
+            var currentPage = new Document(NodeFactory.Node.getCurrentNodeId());
+            if (currentPage.getProperty("public") != null)
+            {
+                currentPage.SetProperty("public", 0);
+
+                //disable "unpublish" option:
+                if (m_unpublishedButton != null)
+                    m_Manager.LiveEditingContext.Menu.Remove(m_unpublishedButton);
+            }
 
             //Save&Publish code:
             // save and publish
@@ -280,8 +295,9 @@ namespace umbraco.presentation.LiveEditing.Controls
         protected void SaveAndPublishButton_Click(object sender, ImageClickEventArgs e)
         {
             //This is the real publication in Triphulcas:
-            if (NodeFactory.Node.GetCurrent().GetProperty("public") != null)
-                NodeFactory.Node.GetCurrent().SetProperty("public", 1);
+            var currentPage = new Document(NodeFactory.Node.getCurrentNodeId());
+            if (currentPage.getProperty("public") != null)
+                currentPage.SetProperty("public", 1);
 
             // save and publish
             m_Manager.LiveEditingContext.Updates.SaveAll();
