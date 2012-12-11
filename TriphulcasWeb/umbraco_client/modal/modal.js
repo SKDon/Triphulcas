@@ -164,7 +164,8 @@ Umbraco.Sys.registerNamespace("Umbraco.Controls");
                         umbModal.fadeIn(250);
 
                         if (_this._hideOverlay)
-                            jQuery('.jqmOverlay').attr('class','');
+                            //jQuery('.jqmOverlay').attr('class','');
+                            jQuery('.jqmOverlay').attr('style', 'display:none');
 
                         if (typeof onCreate == "function") {
                             onCreate.call(_this, h)

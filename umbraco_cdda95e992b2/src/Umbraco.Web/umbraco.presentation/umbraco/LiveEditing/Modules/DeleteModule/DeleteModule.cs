@@ -60,7 +60,7 @@ namespace umbraco.presentation.LiveEditing.Modules.DeleteModule
             m_DeleteButton.ToolTip = ui.GetText("delete"); ;
             m_DeleteButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/DeleteModule/delete.png", SystemDirectories.Umbraco);
             m_DeleteButton.Visible = UmbracoContext.Current.HasPermission(ActionDelete.Instance.Letter);
-            m_DeleteButton.OnClientClick = "jQuery('#" + m_DeleteModal.ClientID + @"').ModalWindowShow('" + ui.GetText("delete") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
+            m_DeleteButton.OnClientClick = "jQuery('#" + m_DeleteModal.ClientID + @"').ModalWindowShowWithoutBackground('" + ui.GetText("delete") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
 
             Controls.Add(m_DeleteButton);
         }

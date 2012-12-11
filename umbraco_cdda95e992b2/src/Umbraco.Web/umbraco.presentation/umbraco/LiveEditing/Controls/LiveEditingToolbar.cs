@@ -87,7 +87,7 @@ namespace umbraco.presentation.LiveEditing.Controls
         {
             m_Manager.LiveEditingContext.Menu.Add(new Separator());
             m_Manager.LiveEditingContext.Menu.Add(new ItemEditor(m_Manager));
-            m_Manager.LiveEditingContext.Menu.Add(new CreateModule(m_Manager));
+            //m_Manager.LiveEditingContext.Menu.Add(new CreateModule(m_Manager));
             m_Manager.LiveEditingContext.Menu.Add(new UnpublishModule(m_Manager));
             m_Manager.LiveEditingContext.Menu.Add(new DeleteModule(m_Manager));
             //m_Manager.LiveEditingContext.Menu.Add(new MacroModule(m_Manager));
@@ -254,6 +254,10 @@ namespace umbraco.presentation.LiveEditing.Controls
             //Standard:
             //m_Manager.LiveEditingContext.Updates.SaveAll();
             //m_Manager.DisplayUserMessage("Page saved", "The page was saved successfully. Remember to publish your changes.", "info");
+
+            //This marks as "unpublished" in Triphulcas:
+            if (NodeFactory.Node.GetCurrent().GetProperty("public") != null)
+                NodeFactory.Node.GetCurrent().SetProperty("public", 0);
 
             //Save&Publish code:
             // save and publish

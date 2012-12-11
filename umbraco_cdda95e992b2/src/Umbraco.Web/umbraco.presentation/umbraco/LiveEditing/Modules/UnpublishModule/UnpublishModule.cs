@@ -9,6 +9,9 @@ using umbraco.IO;
 namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
 {
     [ClientDependency(200, ClientDependencyType.Javascript, "LiveEditing/Modules/UnpublishModule/UnpublishModule.js", "UmbracoRoot")]
+    //Next two attributes: added to be able to comment out CreateModule (which already defines those dependencies)
+    [ClientDependency(200, ClientDependencyType.Javascript, "modal/modal.js", "UmbracoClient")]
+    [ClientDependency(200, ClientDependencyType.Css, "modal/style.css", "UmbracoClient")]
     public class UnpublishModule : BaseModule
     {
         protected ImageButton m_UnpublishButton;
@@ -72,7 +75,7 @@ namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
             m_UnpublishButton.ToolTip = "Unpublish";
             m_UnpublishButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/UnpublishModule/unpublish.png", SystemDirectories.Umbraco);
             m_UnpublishButton.Visible = UmbracoContext.Current.HasPermission(ActionUnPublish.Instance.Letter);
-            m_UnpublishButton.OnClientClick = "jQuery('#" + m_UnpublishModal.ClientID + @"').ModalWindowShow('" + ui.GetText("unPublish") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
+            m_UnpublishButton.OnClientClick = "jQuery('#" + m_UnpublishModal.ClientID + @"').ModalWindowShowWithoutBackground('" + ui.GetText("unPublish") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
 
             Controls.Add(m_UnpublishButton);
         }
