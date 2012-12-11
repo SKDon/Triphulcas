@@ -92,7 +92,9 @@ namespace TriphulcasMvc.Controllers
                 {
                     document = new Document(relation.Child.Id);
                     
-                    if ((document.getProperty("public").Value.ToString()) != "1")//can't do document.Published because we have to publish always in order to use canvas edition
+                    if ((document.getProperty("public").Value.ToString()) != "1" //can't do document.Published because we have to publish always in order to use canvas edition
+                        &&
+                        !document.IsTrashed) //We won't show trashed content
                     {
                         //articleLink = String.Format("/umbraco/canvas.aspx?redir=/{0}.aspx", document.Id);
                         articleLink = String.Format("/{0}.aspx", document.Id);

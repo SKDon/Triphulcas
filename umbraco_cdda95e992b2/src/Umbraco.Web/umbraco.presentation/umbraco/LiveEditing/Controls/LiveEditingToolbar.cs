@@ -65,6 +65,9 @@ namespace umbraco.presentation.LiveEditing.Controls
 
             m_Manager = manager;
 
+            //Triphulcas handler, in order to set article's title as the content name
+            Document.AfterSave += Document_AfterSave;
+
             if (!UmbracoContext.Current.LiveEditingContext.InSkinningMode)
             {
                 AddModules();
@@ -73,6 +76,19 @@ namespace umbraco.presentation.LiveEditing.Controls
             {
                 AddSkinningModules();
             }
+        }
+
+        /// <summary>
+        /// Takes a little (after publish the article is still with the old name (id))
+        /// but works well enough for me
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Document_AfterSave(Document sender, cms.businesslogic.SaveEventArgs e)
+        {
+            var title = sender.getProperty("titulo");
+            if (title != null && !string.IsNullOrEmpty(title.Value.ToString()))
+                sender.Text = title.Value.ToString();
         }
 
         #endregion
