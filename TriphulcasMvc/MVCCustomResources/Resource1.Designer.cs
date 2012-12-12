@@ -97,6 +97,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editar.
+        /// </summary>
+        public static string EditArticle {
+            get {
+                return ResourceManager.GetString("EditArticle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}, modifica tu artículo haciendo click en este botón:.
+        /// </summary>
+        public static string EditArticleDescription {
+            get {
+                return ResourceManager.GetString("EditArticleDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture?type=large.
         /// </summary>
         public static string FacebookLargePictureUrl {

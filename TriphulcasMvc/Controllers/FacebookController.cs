@@ -73,6 +73,26 @@ namespace TriphulcasMvc.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetArticleLinkById(int articleId)
+        {
+            string returnUrl = "/";
+            if (User != null && User is FacebookPrincipal && (User as FacebookPrincipal).IsInRole("Triphulcas"))
+            {
+                RelationType type = RelationType.GetByAlias("userArticles");
+                var relations = Relation.GetRelations(articleId, type);
+
+                if (relations != null && relations.Length > 0)
+                    if (relations[0].Parent.Id == (User as FacebookPrincipal).GetMember().Id)
+                    {
+                        //REAL ACTIVATION OF LIVE EDITING:
+                        UmbracoContext.Current.LiveEditingContext.Enabled = true;
+                        returnUrl = String.Format("/{0}.aspx", articleId);
+                    }
+            }
+            return Json(new { url = returnUrl }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
         public ActionResult GetArticleLink()
         {
             if (User != null && User is FacebookPrincipal && (User as FacebookPrincipal).IsInRole("Triphulcas"))

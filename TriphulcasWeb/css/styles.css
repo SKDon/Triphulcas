@@ -133,7 +133,8 @@ body { font-family: arial; font-size: 14px; }
 .download-button p {
 	color: #005500;
 	font-size: 17px;
-	padding: 0.6em 0 0 9px;
+	    padding-left: 3em;
+    padding-top: 1em;
 }
 .download-button p.smallprint {
 	font-size: 12px;

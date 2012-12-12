@@ -19,7 +19,13 @@ public class TriphulcasAppBase : ApplicationBase
         RouteTable.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
         RouteTable.Routes.MapRoute(
-            name: "Facebook Controller",
+    "Facebook Controller Get Link By Article Id",
+    "Facebook/GetArticleLinkById/{articleId}", 
+       new { controller = "Facebook", action = "GetArticleLinkById" }
+        );
+
+        RouteTable.Routes.MapRoute(
+            name: "Facebook Controller Any Action",
             url: "Facebook/{action}/{accesstoken}",
             defaults: new { controller = "Facebook", action = "Index", accesstoken = UrlParameter.Optional }
         );
