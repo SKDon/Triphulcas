@@ -6,7 +6,7 @@
         
 		<umbraco:Macro Alias="ArticleEditButton" runat="server" />
 		
-        <img src="img/ko-logo.png" />
+		<a href="/"><img src="img/ko-logo.png" /></a>
     </div>
 
 </asp:Content>
