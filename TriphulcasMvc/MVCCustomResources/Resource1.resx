@@ -174,4 +174,16 @@
   <data name="WithProblems" xml:space="preserve">
     <value>con problemas</value>
   </data>
+  <data name="FacebookLargePictureUrl" xml:space="preserve">
+    <value>http://graph.facebook.com/{0}/picture?type=large</value>
+  </data>
+  <data name="FacebookSmallPictureUrl" xml:space="preserve">
+    <value>http://graph.facebook.com/{0}/picture?type=small</value>
+  </data>
+  <data name="FacebookSquarePictureUrl" xml:space="preserve">
+    <value>http://graph.facebook.com/{0}/picture?type=square</value>
+  </data>
+  <data name="LastArticles" xml:space="preserve">
+    <value>Últimos artículos</value>
+  </data>
 </root>

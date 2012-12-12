@@ -97,11 +97,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture?type=large.
+        /// </summary>
+        public static string FacebookLargePictureUrl {
+            get {
+                return ResourceManager.GetString("FacebookLargePictureUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture.
         /// </summary>
         public static string FacebookPictureUrl {
             get {
                 return ResourceManager.GetString("FacebookPictureUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture?type=small.
+        /// </summary>
+        public static string FacebookSmallPictureUrl {
+            get {
+                return ResourceManager.GetString("FacebookSmallPictureUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture?type=square.
+        /// </summary>
+        public static string FacebookSquarePictureUrl {
+            get {
+                return ResourceManager.GetString("FacebookSquarePictureUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Últimos artículos.
+        /// </summary>
+        public static string LastArticles {
+            get {
+                return ResourceManager.GetString("LastArticles", resourceCulture);
             }
         }
         

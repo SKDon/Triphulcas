@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\", "{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "TriphulcasWeb\", "{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{54e665be-93c7-40cf-84f2-d7ed6b8690f6}|TriphulcasMvc.dll;{2ad1e6d7-eee0-4ef5-968f-98ef4c43b35e}|TriphulcasLib.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/TriphulcasWeb"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\"
+		Debug.AspNetCompiler.PhysicalPath = "TriphulcasWeb\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TriphulcasWeb\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/TriphulcasWeb"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Store\Trabajo\Triphulcas\Source\TriphulcasWeb\"
+		Release.AspNetCompiler.PhysicalPath = "TriphulcasWeb\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TriphulcasWeb\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"

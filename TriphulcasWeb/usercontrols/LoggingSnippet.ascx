@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="LoggingSnippet.ascx.cs" Inherits="usercontrols_Snippet" %>
-<div class="<%=ClassName%>" style="width:<%=Width%>px">
+<div class="<%=ClassName%>" style="width:<%=SnippetWidth%>px">
     <div class="stickerHeading titillium">
         <h1 class="profileTitle"><b><%= Resources.Resource1.SnippetWelcomeTitle %>  </b><%=CurrentUserName%>!</h1>
     </div>
@@ -9,7 +9,7 @@
         <button id="pLogout" runat="server" hidden><%= Resources.Resource1.Logout %></button>
 	</p>
     <%--Backup paragraph:--%>
-    <p id="pHidden" hidden>  
+    <p class="profile" id="pHidden" hidden>  
         <%= Resources.Resource1.SeeYou %>     
         <img src="/img/unknown.gif" />
         <span><%= Resources.Resource1.SnippetComebackBeforeLink %> <a class="popup" href="/authentication.aspx"><%= Resources.Resource1.SnippetComebackLink %> </a>.</span>        

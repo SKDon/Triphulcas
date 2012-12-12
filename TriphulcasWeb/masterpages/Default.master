@@ -20,28 +20,8 @@
 <umbraco:Macro Alias="IconsSnippet" runat="server"></umbraco:Macro>
 
 <div class="floatLeft">
-    <div class="sticker" style="width: 380px">
-        <div class="stickerHeading titillium">
-            <h1>More features</h1>
-        </div>
-        <ul class="tickIcons">
-            <li>Free, open source (<a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>)</li>
-            <li>Pure JavaScript &mdash; works with any web framework</li>
-            <li>
-                Small & lightweight &mdash; 40kb minified
-                <p class="smallprint">... reduces to 14kb when using HTTP compression</p>
-            </li>
-            <li>No dependencies</li>            
-            <li>
-                Supports all mainstream browsers
-                <p class="smallprint">IE 6+, Firefox 2+, Chrome, Opera, Safari (desktop/mobile)</p>
-            </li>
-            <li>
-                Fully documented
-                <p class="smallprint">API docs, live examples, and interactive tutorials included</p>
-            </li>
-        </ul>
-    </div>
+
+	<umbraco:Macro RightSide="0" SnippetWidth="380" Alias="ArticleListSnippet" runat="server"></umbraco:Macro>
     
     <div class="sticker" style="width: 380px">
         <div class="stickerHeading titillium">
@@ -86,7 +66,7 @@
     </div>    
 </div>	
 
-<umbraco:Macro RightSide="1" Width="494" Alias="Snippet" runat="server"></umbraco:Macro>	
+<umbraco:Macro RightSide="1" SnippetWidth="494" Alias="Snippet" runat="server"></umbraco:Macro>	
         
 <div class="sticker floatRight homepageExample" style="width:494px">
     <div class="stickerHeading titillium">

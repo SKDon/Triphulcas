@@ -18,7 +18,7 @@ using Facebook;
 
 using TriphulcasLib.UI;
 
-public partial class usercontrols_TestUC : TriphulcasUserControl
+public partial class usercontrols_TestUC : TriphulcasSnippet
 {
     protected void Page_Load(object sender, EventArgs e)
     {

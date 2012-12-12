@@ -113,9 +113,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco, Version=1.0.4701.29088, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="umbraco, Version=1.0.4711.20083, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Store\Trabajo\Triphulcas\TriphulcasWeb\bin\umbraco.dll</HintPath>
+      <HintPath>..\umbraco_cdda95e992b2\src\Umbraco.Web.UI\bin\umbraco.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

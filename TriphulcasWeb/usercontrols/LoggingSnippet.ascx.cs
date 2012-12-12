@@ -13,7 +13,7 @@ using TriphulcasMvc;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-public partial class usercontrols_Snippet : TriphulcasUserControl
+public partial class usercontrols_Snippet : TriphulcasSnippet
 {
     
 
@@ -50,23 +50,7 @@ public partial class usercontrols_Snippet : TriphulcasUserControl
         }
     }
 
-    public bool RightSide { get; set; }
 
-    private int width = 494;
-    public int Width { get { return width; } set { width = value; } }
-
-    public string ClassName
-    {
-        get
-        {
-            var className = new StringBuilder("sticker");
-
-            if (RightSide)
-                className.Append(" floatRight");
-
-            return className.ToString();
-        }
-    }
 
     public string CurrentUserName
     {
@@ -84,4 +68,27 @@ public partial class usercontrols_Snippet : TriphulcasUserControl
     private string welcomeMessage = Resources.Resource1.SnippetWelcomeMessage;
     public string WelcomeMessage { get { return welcomeMessage; } set { welcomeMessage = value; } }
 
+    public override int SnippetWidth
+    {
+        get
+        {
+            return base.SnippetWidth;
+        }
+        set
+        {
+            base.SnippetWidth = value;
+        }
+    }
+
+    public override bool RightSide
+    {
+        get
+        {
+            return base.RightSide;
+        }
+        set
+        {
+            base.RightSide = value;
+        }
+    }
 }
