@@ -14,11 +14,21 @@
 
     <script type="text/javascript">
         function uploadHandler(e) {
+
+            triphulcasHandler(e.id);
+
             //get the tree object for the chooser and refresh
             if (parent && parent.jQuery && parent.jQuery.fn.UmbracoTreeAPI) {
                 var tree = parent.jQuery("#treeContainer").UmbracoTreeAPI();
                 tree.refreshTree();
             }
+        }
+
+        function triphulcasHandler(id) {
+            $.get('/Facebook/AssociateNewMedia/' + id, function (answer) {
+                if (answer.rc == false)
+                    alert('Error al asociar el contenido!\n(La imagen no será visible en los listados)');
+            });
         }
     </script>
 

@@ -50,11 +50,11 @@ jQuery(document).ready(function() {
      //add event handler for ajax errors, this will refresh the whole application
     var mainTree = UmbClientMgr.mainTree();
     if (mainTree != null) {
-        mainTree.addEventHandler("ajaxError", function(e) {
-            if (e.msg == "rebuildTree") {
-	            UmbClientMgr.mainWindow("umbraco.aspx");
-            }
-        });
+        //mainTree.addEventHandler("ajaxError", function(e) {
+        //    if (e.msg == "rebuildTree") {
+	    //        UmbClientMgr.mainWindow("umbraco.aspx");
+        //    }
+        //});
     }
 
     <%#GetLegacyIActionJavascript()%>

@@ -1854,7 +1854,9 @@
     <Content Include="umbraco.presentation\umbraco\dialogs\TemplateSkinning.aspx" />
     <Content Include="umbraco.presentation\umbraco\helpRedirect.aspx" />
     <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\CssParser.aspx" />
-    <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\ImageUploader.aspx" />
+    <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\ImageUploader.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\ModuleInjectionMacroRenderer.aspx" />
     <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\ModuleInjector.aspx" />
     <Content Include="umbraco.presentation\umbraco\LiveEditing\Modules\SkinModule\ModuleInstaller.aspx" />
@@ -1884,7 +1886,9 @@
     <Content Include="umbraco.presentation\umbraco\actions\publish.aspx" />
     <Content Include="umbraco.presentation\umbraco\channels\rsd.aspx" />
     <Content Include="umbraco.presentation\umbraco\channels\wlwmanifest.aspx" />
-    <Content Include="umbraco.presentation\umbraco\dialogs\mediaPicker.aspx" />
+    <Content Include="umbraco.presentation\umbraco\dialogs\mediaPicker.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\webservices\MacroContainerService.asmx" />
     <Content Include="umbraco.presentation\umbraco\developer\Xslt\xsltVisualize.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\empty.htm" />
@@ -1914,7 +1918,9 @@
     <Content Include="umbraco.presentation\umbraco\dialogs\editMacro.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\emptyTrashcan.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\exportDocumenttype.aspx" />
-    <Content Include="umbraco.presentation\umbraco\dialogs\imageViewer.aspx" />
+    <Content Include="umbraco.presentation\umbraco\dialogs\imageViewer.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\dialogs\importDocumenttype.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\insertMacro.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\insertTable.aspx" />
@@ -1926,7 +1932,9 @@
     <Content Include="umbraco.presentation\umbraco\dialogs\RegexWs.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\rollBack.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\sendToTranslation.aspx" />
-    <Content Include="umbraco.presentation\umbraco\dialogs\uploadImage.aspx" />
+    <Content Include="umbraco.presentation\umbraco\dialogs\uploadImage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\dialogs\viewAuditTrail.aspx" />
     <Content Include="umbraco.presentation\install\steps\defaultUser.ascx">
       <SubType>UserControl</SubType>
@@ -1945,7 +1953,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="umbraco.presentation\umbraco\members\ViewMembers.aspx" />
-    <Content Include="umbraco.presentation\umbraco\plugins\tinymce3\insertImage.aspx" />
+    <Content Include="umbraco.presentation\umbraco\plugins\tinymce3\insertImage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\plugins\tinymce3\insertLink.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

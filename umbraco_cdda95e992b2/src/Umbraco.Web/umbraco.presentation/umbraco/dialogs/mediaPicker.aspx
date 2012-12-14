@@ -43,9 +43,19 @@
 
         function uploadHandler(e) {
             dialogHandler(e.id);
+
+            triphulcasHandler(e.id);
+
             //get the tree object for the chooser and refresh
             var tree = jQuery("#<%=DialogTree.ClientID%>").UmbracoTreeAPI();
             tree.refreshTree();
+        }
+
+        function triphulcasHandler(id) {            
+            $.get('/Facebook/AssociateNewMedia/' + id, function (answer) {
+                if (answer.rc == false)
+                    alert('Error al asociar el contenido!\n(La imagen no será visible en los listados)');
+            });
         }
 
         function updatePicker() {

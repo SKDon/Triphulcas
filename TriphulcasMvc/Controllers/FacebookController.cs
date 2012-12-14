@@ -26,7 +26,7 @@ namespace TriphulcasMvc.Controllers
         // GET: /Facebook/
         [HttpGet]
         public ActionResult GetProfile(string id)
-        {            
+        {
             try
             {
                 if (User != null && User is FacebookPrincipal)
@@ -69,8 +69,42 @@ namespace TriphulcasMvc.Controllers
         public ActionResult Logout(string accesstoken)
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index");            
+            return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult AssociateNewMedia(int mediaId)
+        {
+
+            bool alreadyAssociated = false;
+            bool rc = false;
+
+            if (User != null && User is FacebookPrincipal && (User as FacebookPrincipal).IsInRole("Triphulcas"))
+            {
+                var currentUser = User as FacebookPrincipal;
+                var memberId = currentUser.GetMember().Id;
+
+
+                RelationType type = RelationType.GetByAlias("userMedia");
+                var relations = Relation.GetRelations(memberId, type);
+
+                foreach (Relation relation in relations)
+                {
+                    if (mediaId == relation.Child.Id)
+                        alreadyAssociated = true;
+                }
+
+                if (!alreadyAssociated)
+                {
+                    Relation.MakeNew(memberId, mediaId, type, "new media association");
+
+                    rc = true;
+                }
+            }
+
+            return Json(new { rc = rc }, JsonRequestBehavior.AllowGet);
+        }
+
 
         [HttpGet]
         public ActionResult GetArticleLinkById(int articleId)
@@ -107,11 +141,11 @@ namespace TriphulcasMvc.Controllers
                 RelationType type = RelationType.GetByAlias("userArticles");
                 var relations = Relation.GetRelations(memberId, type);
                 Document document;
-                
+
                 foreach (Relation relation in relations)
                 {
                     document = new Document(relation.Child.Id);
-                    
+
                     if ((document.getProperty("public").Value.ToString()) != "1" //can't do document.Published because we have to publish always in order to use canvas edition
                         &&
                         !document.IsTrashed) //We won't show trashed content
@@ -142,7 +176,7 @@ namespace TriphulcasMvc.Controllers
                 //2.- Return target link in canvas mode
                 return Json(new { url = articleLink }, JsonRequestBehavior.AllowGet);
             }
-            else 
+            else
                 return null;
         }
     }

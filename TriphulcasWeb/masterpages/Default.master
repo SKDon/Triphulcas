@@ -10,7 +10,7 @@
             <p class="smallprint">v2.2.0 - 14kb min+gz</p>
         </a>
     </div>--%>
-    <img src="img/ko-logo.png" />
+    <a href="/"><img src="img/ko-logo.png" /></a>
 </div>
 
 </asp:Content>
