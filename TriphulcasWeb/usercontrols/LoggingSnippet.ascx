@@ -22,8 +22,8 @@
     function UpdateFacebookProfile(id) {
         $.get('/Facebook/GetProfile/' + id, function (profile) {
             $('.profileTitle').html('<b><%= Resources.Resource1.SnippetWelcomeTitle %> </b>' + profile.title + '!');
-            $('.profile img').attr("src", profile.url);
-            $('.profile span').html(profile.text);
+            $('#<%=pImage.ClientID%>').attr("src", profile.url);
+            $('#<%=pWelcome.ClientID%>').html(profile.text);
             $('.profile button').show();
 
             //Update another strange snippet... ugly.
@@ -35,10 +35,12 @@
     function SayBye(event) {
         $.get('/Facebook/Logout', function (empty) {
             $('.profileTitle').html('<%= Resources.Resource1.SeeYou %>');
-            $('.profile img').attr("src", $('#pHidden img').attr("src"));
-            $('.profile span').html($('#pHidden span').html());
+            $('#<%=pImage.ClientID%>').attr("src", $('#pHidden img').attr("src"));
+            $('#<%=pWelcome.ClientID%>').html($('#pHidden span').html());
             
             $('.profile button').hide();
+
+            UpdateTriphulcasActions('false');
         });
         event.stopPropagation();        
     }

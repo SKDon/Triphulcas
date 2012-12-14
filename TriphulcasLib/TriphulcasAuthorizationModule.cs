@@ -67,6 +67,7 @@ namespace TriphulcasLib
         void context_PostAuthenticateRequest(object sender, EventArgs e)
         {
             //Disregard backoffice requests:
+            //TODO. Use GlobalSettings.RequestIsInUmbracoApplication(HttpContext.Current)!!
             if (UmbracoContext.Current == null || UmbracoContext.Current.HttpContext.Request.Url.AbsolutePath.StartsWith("/umbraco")) //NOT WORKING!!!UmbracoContext.Current.IsFrontEndUmbracoRequest)
                 return;
 
