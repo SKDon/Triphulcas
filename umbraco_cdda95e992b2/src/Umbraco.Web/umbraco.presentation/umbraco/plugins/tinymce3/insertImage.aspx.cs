@@ -34,7 +34,24 @@ namespace umbraco.presentation.plugins.tinymce3
             uicontrols.TabPage tp2 = tv_options.NewTabPage(ui.Text("create") + " " + ui.Text("new"));
             tp2.HasMenu = false;
             tp2.Controls.Add(pane_upload);
-    }
+
+            if (IsTriphulcasCall)
+                Page.ClientScript.RegisterClientScriptBlock(
+                    Page.GetType(), 
+                    "TriphulcasCustomCode", 
+                    @"jQuery('document').ready(function(){
+                        jQuery('#advimage').css('display','block');
+                        jQuery('#SubmitControls').css('display','none');
+                    });",                         
+                    true);
+        }
+
+        public bool IsTriphulcasCall {
+            get
+            {
+                return !String.IsNullOrEmpty(Request.Params["ShowItFuckEr"]);
+            }
+        }
 
         #region Web Form Designer generated code
         override protected void OnInit(EventArgs e)

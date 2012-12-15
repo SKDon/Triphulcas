@@ -192,4 +192,10 @@
   <data name="LastArticles" xml:space="preserve">
     <value>Últimos artículos</value>
   </data>
+  <data name="UploadImagesDescription" xml:space="preserve">
+    <value>{0}, sigue dañando tu imagen subiendo más fotos haciendo click </value>
+  </data>
+  <data name="UploadImagesLiteral" xml:space="preserve">
+    <value>Aquí</value>
+  </data>
 </root>

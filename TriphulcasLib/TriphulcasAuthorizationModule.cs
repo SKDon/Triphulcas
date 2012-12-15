@@ -31,6 +31,14 @@ namespace TriphulcasLib
             // custom logging implementation for it
             context.LogRequest += new EventHandler(OnLogRequest);
             context.PostAuthenticateRequest += new EventHandler(context_PostAuthenticateRequest);
+            context.Error += new EventHandler(context_Error);
+        }
+
+        void context_Error(object sender, EventArgs e)
+        {
+            //Session timeout. TODO. CHECH DOING IT WITH FORMS AUTHENTICATION!!!!!
+            if ((sender as HttpApplication).Server.GetLastError().GetType() == typeof(HttpRequestValidationException))
+                (sender as HttpApplication).Context.Response.Redirect("/");
         }
 
         private MembershipUser Authorize(FacebookPrincipalSerializableModel model, out string[] roles)

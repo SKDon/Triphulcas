@@ -11,6 +11,10 @@ namespace TriphulcasLib.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Security validation over session timed out
+            if (IsLiveEditing && User == null)
+                Response.Redirect("/");
+
             if (IsTrashed)
                 this.Visible = false;
             else

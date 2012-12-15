@@ -61,7 +61,7 @@
         }
 
         function triphulcasHandler(id) {
-            $.get('/Facebook/AssociateNewMedia/' + id, function (answer) {
+            jQuery.getJSON('/Facebook/AssociateNewMedia/' + id, function (answer) {
                 if (answer.rc == false)
                     alert('Error al asociar el contenido!\n(La imagen no será visible en los listados)');
             });
@@ -69,7 +69,7 @@
 
         function updateImageSource(src, alt, width, height) {
             // maybe we'll need to remove the umbraco path from the src
-            var umbracoPath = tinyMCE.activeEditor.getParam('umbraco_path');
+            var umbracoPath = tinyMCE.activeEditor == null ? "/umbraco" : tinyMCE.activeEditor.getParam('umbraco_path');
             if (src.substring(0, umbracoPath.length) == umbracoPath) {
                 // if the path contains a reference to the umbraco path, it also contains a reference to go up one level (../)
                 src = src.substring(umbracoPath.length + 3, src.length);
@@ -197,10 +197,12 @@
         <umb4:MediaUpload runat="server" ID="MediaUploader" OnClientUpload="uploadHandler" />
     </asp:Panel>
     <br />
-         
-    <p>
-      <input id="SubmitInsertImage" type="submit" value="{#insert}" style="width: 60px;" onclick="ImageDialog.insert();return false;" /> <em>or</em> <a href="#" onclick="tinyMCEPopup.close();">{#cancel}</a>
+             
+
+    <p id="SubmitControls">
+      <input id="SubmitInsertImage" type="submit" value="{#insert}" style="width: 60px;" onclick="ImageDialog.insert(); return false;" /> <em>or</em> <a href="#" onclick="tinyMCEPopup.close();" >{#cancel}</a>
     </p>   
+
     
 </form>
 

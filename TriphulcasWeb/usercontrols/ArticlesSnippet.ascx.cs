@@ -29,8 +29,8 @@ public partial class usercontrols_ArticlesSnippet : TriphulcasSnippet
     public Document [] GetLatestArticles()
     {
         //new Document(Node.getCurrentNodeId())
-        return Document.GetDocumentsOfDocumentType(DocumentType.GetByAlias("Article").Id).OfType<Document>().OrderByDescending(d => d.UpdateDate).Take(5).ToArray<Document>();
-        //return Node.GetCurrent().Children.OfType<Node>().Where(t => t.NodeTypeAlias == "Article").OrderBy(n => n.UpdateDate).Take(5).ToArray<Node>();
+        return Document.GetDocumentsOfDocumentType(DocumentType.GetByAlias("Article").Id).OfType<Document>().Where(t => t.getProperty("public").Value.ToString() == "1").OrderByDescending(d => d.UpdateDate).Take(5).ToArray<Document>();
+        //return Node.GetCurrent().Children.OfType<Node>().Where(t => t.NodeTypeAlias == "Article").OrderBy(n => n.UpdateDate).Take(5).ToArray<Node>();        
     }
 
     public string GetAuthorThumbnailUrl(int documentId)

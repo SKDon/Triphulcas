@@ -30,6 +30,14 @@ namespace TriphulcasLib.UI
             }
         }
 
+        public bool IsTriphulcas
+        {
+            get
+            {
+                return (User != null && User.IsInRole("Triphulcas"));
+            }
+        }
+
         public bool IsPreview
         {
             get

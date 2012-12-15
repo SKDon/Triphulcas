@@ -19,8 +19,14 @@ public class TriphulcasAppBase : ApplicationBase
         RouteTable.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
         RouteTable.Routes.MapRoute(
-    "Facebook Controller Get Link By Article Id",
-    "Facebook/GetArticleLinkById/{articleId}", 
+    "Triphulcas Controller Associate media to user",
+    "Facebook/AssociateNewMedia/{mediaId}",
+       new { controller = "Facebook", action = "AssociateNewMedia" }
+        );
+
+        RouteTable.Routes.MapRoute(
+    "Triphulcas Controller Get Link By Article Id",
+    "Facebook/GetArticleLinkById/{articleId}",
        new { controller = "Facebook", action = "GetArticleLinkById" }
         );
 
@@ -31,5 +37,5 @@ public class TriphulcasAppBase : ApplicationBase
         );
 
         var app = new TriphulcasHttpApplication();
-    }    
+    }
 }

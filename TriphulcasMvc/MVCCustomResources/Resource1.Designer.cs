@@ -259,6 +259,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}, sigue dañando tu imagen subiendo más fotos haciendo click .
+        /// </summary>
+        public static string UploadImagesDescription {
+            get {
+                return ResourceManager.GetString("UploadImagesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aquí.
+        /// </summary>
+        public static string UploadImagesLiteral {
+            get {
+                return ResourceManager.GetString("UploadImagesLiteral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to correcta.
         /// </summary>
         public static string WithoutProblems {

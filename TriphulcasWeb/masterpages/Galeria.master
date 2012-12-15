@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/GaleriaBase.master" AutoEventWireup="true" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+
+    <div id="masthead">
+        
+		<umbraco:Macro Alias="UploadImageButton" runat="server" />
+		
+		<a href="/"><img src="img/ko-logo.png" /></a>
+    </div>
+
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+
+    <form runat="server">
+
+        <umbraco:Macro ID="Macro3" Alias="ArticleTitleSnippet" runat="server"></umbraco:Macro>
+
+        <umbraco:Macro ID="Macro1" Alias="ArticleIntroductionSnippet" runat="server"></umbraco:Macro>
+
+        <umbraco:Macro ID="Macro2" Alias="ArticleContentSnippet" runat="server"></umbraco:Macro>
+
+        <umbraco:Macro ID="Macro4" Alias="ArticleViewerSnippet" runat="server"></umbraco:Macro>
+
+    </form>
+
+</asp:Content>

@@ -1877,8 +1877,12 @@
     </Content>
     <Content Include="umbraco.presentation\umbraco\controls\Images\ImageViewer.ascx" />
     <Content Include="umbraco.presentation\umbraco\controls\Images\ImageViewerUpdater.asmx" />
-    <Content Include="umbraco.presentation\umbraco\controls\Images\UploadMediaImage.ascx" />
-    <Content Include="umbraco.presentation\umbraco\controls\Tree\TreeControl.ascx" />
+    <Content Include="umbraco.presentation\umbraco\controls\Images\UploadMediaImage.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="umbraco.presentation\umbraco\controls\Tree\TreeControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\install\steps\license.ascx" />
     <Content Include="umbraco.presentation\umbraco\actions\delete.aspx" />
     <Content Include="umbraco.presentation\umbraco\actions\editContent.aspx" />

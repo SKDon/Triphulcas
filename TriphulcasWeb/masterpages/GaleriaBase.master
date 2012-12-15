@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/umbraco/masterpages/default.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server">
+	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Triphulcas</title>
+        <link href="css/tripoli.simple.css" type="text/css" rel="stylesheet" />
+        <link rel="canonical" href="/" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="css/smallScreen.css" media="only screen and (max-device-width: 800px)" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" href="css/tripoli.simple.ie.css" /><![endif]-->
+        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="css/ie6ie7.css" /><![endif]-->
+        <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" /><![endif]-->
+        <script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="scripts/knockout-2.2.0.js"></script>
+<script type="text/javascript" src="scripts/cufon-yui.js"></script>
+<script type="text/javascript" src="scripts/titilliummaps.font.js"></script>
+<script type="text/javascript" src="scripts/json2.js"></script>
+<script type="text/javascript" src="scripts/functions.js"></script>
+
+<!--[if lt IE 7]>
+<script defer type="text/javascript" src="js/ie6pngfix.js"></script>
+<![endif]-->
+		
+		
+<%--<script src="scripts/functions.js" type="text/javascript"></script>--%>
+<%--<script src="umbraco_client/Application/NamespaceManager.js?cdv=1" type="text/javascript"></script>--%>
+<%--<link href="umbraco/LiveEditing/CSS/LiveEditing.css?cdv=1" rel="stylesheet" type="text/css">--%>
+<link href="umbraco_client/modal/style.css?cdv=1" rel="stylesheet" type="text/css">
+<%--<script src="umbraco_client/ui/jquery.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/Application/JQuery/jquery.noconflict-invoke.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/js/UmbracoSpeechBubble.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/js/UmbracoSpeechBubbleInit.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/Application/UmbracoUtils.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/LiveEditing/Controls/LiveEditingToolbar.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/Application/UmbracoClientManager.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/LiveEditing/Modules/ItemEditing/ItemEditing.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/LiveEditing/Modules/ItemEditing/ItemEditingInvoke.js?cdv=1" type="text/javascript"></script>--%>
+<script src="umbraco_client/tinymce3/tiny_mce_src.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/tinymce3/plugins/inlinepopups/editor_plugin_src.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/tinymce3/plugins/umbracoimg/editor_plugin_src.js?cdv=1" type="text/javascript"></script>
+
+<%--<script src="umbraco/LiveEditing/Controls/Communicator.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/LiveEditing/Modules/UnpublishModule/UnpublishModule.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco_client/modal/modal.js?cdv=1" type="text/javascript"></script>
+<script src="umbraco/LiveEditing/Modules/DeleteModule/DeleteModule.js?cdv=1" type="text/javascript"></script>		--%>
+		<link rel="stylesheet" href="http://localhost/umbraco_client/tinymce3/themes/umbraco/skins/umbraco/ui.css?cdv=1" />
+<link rel="stylesheet" href="http://localhost/umbraco_client/tinymce3/plugins/inlinepopups/skins/umbraco/window.css?cdv=1" />
+
+
+<%--<script type="text/javascript">
+    $(function() {
+        // Fancy fonts
+        Cufon.replace('.titillium');
+        Cufon.replace('.engraved', {
+            textShadow: 'rgba(253, 224, 217, 0.45) 1.2px 1px'	
+        });
+                
+        // Highlight current top menu item
+        var desiredMenuItem = '' || 'home';
+        $(".main-menu a[rel=" + desiredMenuItem + "]").addClass("active");
+        
+        // Highlight current left-hand-nav menu item
+        var urlFilename = location.href.match(/\/([^\/]+)$/);
+        if (urlFilename) {
+            $(".leftColContents li:has(a[href$=" + urlFilename[1] + "])").addClass("active");
+        }
+    });
+</script> --%>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="vspace"></div>
+            <%--<div class="main-menu">
+    <ul>
+        <li><a rel="home" href="index.html">Home</a></li>
+        <li><a rel="installation" href="documentation/installation.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="examples/">Live examples</a></li>
+        <li><a rel="documentation" href="documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>        	--%>
+<div class="clear"></div>
+            <div class="vspace"></div>
+            
+            <asp:contentplaceholder id="Head" runat="server" ></asp:contentplaceholder>			
+
+
+            <div class="clear vspace"></div>
+
+
+			<asp:contentplaceholder id="Main" runat="server" ></asp:contentplaceholder>			
+			
+
+            <div class="clear"></div>
+<%--            <div class="main-menu">
+    <ul>
+        <li><a rel="home" href="index.html">Home</a></li>
+        <li><a rel="installation" href="documentation/installation.html">Download / Install</a></li>
+        <li><a rel="tutorials" href="http://learn.knockoutjs.com/">Tutorials</a></li>
+        <li><a rel="examples" href="examples/">Live examples</a></li>
+        <li><a rel="documentation" href="documentation/introduction.html">Documentation</a></li>
+        <li><a href="http://groups.google.com/group/knockoutjs">Forum</a></li>
+        <li><a href="http://github.com/SteveSanderson/knockout">Source</a></li>
+    </ul>
+</div>    --%>    	
+<div class="clear"></div>
+        </div>
+        
+        <%--<div id="page-footer">(c) knockoutjs.com</div> --%>
+        
+<%--        <script type="text/javascript">               
+            // Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-65756-7']);
+            _gaq.push(['_trackPageview']);	
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();             
+        </script>--%>
+    </body>
+</html>
+
+</asp:Content>
