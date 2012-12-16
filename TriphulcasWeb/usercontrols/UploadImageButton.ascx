@@ -121,7 +121,8 @@
         });
         
         $('.mceClose').click(function () {
-            alert('Handler for .click() called.');
+            //alert('Handler for .click() called.');
+            __doPostBack('UpdatePanel1', '');
         });
 
     }

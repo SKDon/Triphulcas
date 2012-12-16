@@ -31,6 +31,18 @@ public class TriphulcasAppBase : ApplicationBase
         );
 
         RouteTable.Routes.MapRoute(
+"Triphulcas Controller Get Profile by facebook user Id",
+"Facebook/GetProfile/{id}",
+new { controller = "Facebook", action = "GetProfile" }
+);
+
+        RouteTable.Routes.MapRoute(
+"Triphulcas Controller Get Header (smaller) Profile by facebook user Id",
+"Facebook/GetHeaderProfile/{id}",
+new { controller = "Facebook", action = "GetHeaderProfile" }
+);
+
+        RouteTable.Routes.MapRoute(
             name: "Facebook Controller Any Action",
             url: "Facebook/{action}/{accesstoken}",
             defaults: new { controller = "Facebook", action = "Index", accesstoken = UrlParameter.Optional }

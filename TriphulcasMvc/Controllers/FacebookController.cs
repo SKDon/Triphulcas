@@ -58,6 +58,37 @@ namespace TriphulcasMvc.Controllers
             }
         }
 
+        /// <summary>
+        /// UNSECURED!!
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult GetHeaderProfile(string id)
+        {
+            try
+            {
+                string target = String.IsNullOrEmpty(id) ? "me" : id;
+                var client = new FacebookClient(Resources.Resource1.DefaultAccessToken);
+                dynamic result = client.Get(target, new { fields = "name,first_name,id" });
+
+                return Json(new
+                {
+                    title = result.name,
+                    url = String.Format(Resources.Resource1.FacebookSquarePictureUrl, result.id)
+                }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (FacebookOAuthException ex)
+            {
+                return Json(new
+                {
+                    title = "Facebook Oauth Exception",
+                    url = String.Empty
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         [HttpGet]
         public ActionResult Index()
         {

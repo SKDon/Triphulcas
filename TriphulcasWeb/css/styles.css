@@ -88,6 +88,31 @@ body { font-family: arial; font-size: 14px; }
 	border-top-right-radius: 1em; border-top-left-radius: 1em; 	
 }
 
+.galleryHeading
+{
+	height: 2.3em;
+}
+
+.gallery
+{
+	padding:0.5em 0.5em 0.5em 0.5em;
+	cursor:pointer;
+}
+
+.galleryProfile
+{
+	width:40px;
+	height:40px;
+	float:left;
+}
+
+.galleryText
+{
+	float:left;
+	padding-left:0.8em;
+	padding-top:0.7em;
+}
+
 .engraved { 
 	color: #350808;	
 	text-shadow: rgba(253, 204, 197, 0.4) 1px 1px 0px;

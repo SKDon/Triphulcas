@@ -97,6 +97,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AAAFpNnJPsWoBAEa0Unb56xAfuK35GdnAsZAhDusBgMLCSZAeFLm1PDZBphaZCXLg1bsOYFnpDmLO1ijtV8K1I04lddKAw7F0WZAn9e46cggZDZD.
+        /// </summary>
+        public static string DefaultAccessToken {
+            get {
+                return ResourceManager.GetString("DefaultAccessToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editar.
         /// </summary>
         public static string EditArticle {

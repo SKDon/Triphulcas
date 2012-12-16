@@ -15,13 +15,7 @@
 
     <form runat="server">
 
-        <umbraco:Macro ID="Macro3" Alias="ArticleTitleSnippet" runat="server"></umbraco:Macro>
-
-        <umbraco:Macro ID="Macro1" Alias="ArticleIntroductionSnippet" runat="server"></umbraco:Macro>
-
-        <umbraco:Macro ID="Macro2" Alias="ArticleContentSnippet" runat="server"></umbraco:Macro>
-
-        <umbraco:Macro ID="Macro4" Alias="ArticleViewerSnippet" runat="server"></umbraco:Macro>
+        <umbraco:Macro Alias="ImageListerSnippet" runat="server" />
 
     </form>
 

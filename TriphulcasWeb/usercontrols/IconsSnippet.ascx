@@ -54,4 +54,8 @@
         });        
     });
 
+    $('#galleryBadge').click(function () {
+        location = "/galeria.aspx";
+    });
+
 </script>
