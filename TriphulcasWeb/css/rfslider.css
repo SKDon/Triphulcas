@@ -1,0 +1,14 @@
+#placeholder{position:relative;height:800px;width:1000px;overflow:visible !important;margin:0;padding:0;clear:both;background:#ccc; border:solid 1px #000;border-radius: 5px;}
+#placeholder .rfslidemask{position:relative;overflow:hidden !important;margin:0;padding:0;clear:both;}
+#placeholder .rfslides{position:relative;display:block;float:left;margin:0px;padding:0px;margin-left:0px;}  
+#placeholder .rfslide{position:relative;display:block;float:left;margin:0px;padding:0px;background:#ccc;border-radius: 5px}
+#placeholder .rfslide a{position:absolute;top:45%;right:0px;background-color:#333;color:#fff;margin:0px;padding:0px;font:bold 16px/20px Lucida;height:auto; width:auto; padding:5px;}
+#placeholder .rfnext{background-image:none !important;text-indent:0px !important;position:absolute;bottom:400px;right:10px;z-index:29;display:block;text-decoration:none;}
+#placeholder .rfprev{background-image:none !important;text-indent:0px !important;position:absolute;bottom:400px;left:10px;z-index:29;display:block;text-decoration:none;}
+
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
