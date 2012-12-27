@@ -233,4 +233,55 @@ div.leftCol li.active, div.leftCol li.active a, div.leftCol li.active code, div.
 #page-footer { padding: 15px; text-align: right; }
 
 
+.search_wrapper {width: 100%; height: 53px; bottom: 19px; z-index:9999; left: 0; margin: 0 auto;}
+.search_wrapper .icon {position: relative; float:left; margin-left:40px; width: 18px; height: 18px; top: 18px; right: 19px;}
+.search_wrapper .icon:hover, .icon:active {background-position: 0 -18px;}
+.search_wrapper .icon span {display: none;} 
+.search_wrapper .bar input {width: 330px; font-size: 19px; float:left; font-weight: normal; background: transparent; margin: 17px 0 0 18px; border: 0; outline:0} 
+
+.form.input_wrapper {width: auto; margin-right: 19px;}
+.search_wrapper {background:url("/img/search_bar.png") no-repeat scroll left top transparent;} 
+.search_wrapper .icon {background: url("/img/search_icon.png") no-repeat scroll left top transparent;}
+.search_wrapper .bar input {font-family:"Helvetica","Arial",sans-serif; color:#fff;}
+
+.message {color: #325b3a;}
+.message {padding: 15px 20px; text-align: center; float:left; font-size: 14px;}
+.message .strong, .strong {font-weight: bold;}
+.message .italic {font-style: italic;}
+
+#content_wrapper {position: relative; z-index: 98; background-color: #fff;}
+/* ------------------------ */
+/* ------Start, Results---- */
+/* ------------------------ */
+.result_wrapper {margin: 20px 0 0 0;}
+#more_results {margin-top: 12px; text-align: center;}
+#more_results span {cursor: pointer;}
+.result {padding: 5px 0 5px 0; width: 100%; font-size: 12px; cursor: pointer; border-bottom: 1px solid #DDD;}
+.result.last {border: none;}
+
+.result .play, .loading, .pause {width: 29px; height: 29px; display: block; float: left; cursor: pointer;}
+
+.result .play {background:url("/img/result_play.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.result .play:hover {background-position: right top;}
+.result .play:active {background-position:0 -58px;}
+
+.result .track {float: left; margin: 0 0 0 10px; cursor: pointer; padding: 3px 0 0 0; width: 300px;}
+.result .track .song {font-size: 12px; margin: 0 0 3px 0;}
+.result .track .artist {font-size: 10px; margin: 0; color: #999;}
+
+.result .sharesong {width:59px; height: 29px; display: inline; float: right; cursor: pointer; background:url("/img/result_share.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.result .sharesong:hover {background-position: right top;}
+.result .sharesong:active {background-position:0 -58px;}
+
+.play {background:url("/img/result_play.png") no-repeat scroll right top transparent;}
+.loading {background:url("/img/result_loader.gif") no-repeat scroll 7px 5px transparent;}
+.pause {background:url("/img/result_pause.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.pause:hover {background-position: right top;}
+
+/* --------------------------------- */
+/* ----------Results---------------- */
+/* --------------------------------- */
+#more_results span {color: #5EA4C7; font-weight: bold; font-size: 11px;}
+#more_results span:hover {color: #316680;}
+#more_results span img {margin-right: 5px;}
 

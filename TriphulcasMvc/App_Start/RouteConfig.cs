@@ -13,6 +13,13 @@ namespace TriphulcasMvc
         {
             //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+    //        routes.MapRoute(
+    //"Grooveshark Controller to play streaming music",
+    //"Grooveshark/PlaySong/{songId}",
+    //new { controller = "Grooveshark", action = "PlaySong" },
+    //new { songId = @"\d{6}" }
+    //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{accesstoken}",

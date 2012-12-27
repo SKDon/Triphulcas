@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/GramolaBase.master" AutoEventWireup="true" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+
+    <div id="masthead">
+        
+		<umbraco:Macro Alias="ArticleEditButton" runat="server" />
+		
+		<a href="/"><img src="img/ko-logo.png" /></a>
+    </div>
+
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
+
+    
+
+        <umbraco:Macro Alias="GramolaSnippet" runat="server" />
+
+    
+
+</asp:Content>

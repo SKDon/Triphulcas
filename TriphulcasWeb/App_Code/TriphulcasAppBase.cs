@@ -19,6 +19,27 @@ public class TriphulcasAppBase : ApplicationBase
         RouteTable.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
         RouteTable.Routes.MapRoute(
+"Grooveshark Controller to play streaming music",
+"Music/PlaySong/{songId}",
+new { controller = "Grooveshark", action = "PlaySong" }
+//,new { songId = @"\d{6}" }
+);
+
+        RouteTable.Routes.MapRoute(
+        "Grooveshark Controller to retrieve the list of streaming music",
+        "Music/GetPlayList",
+        new { controller = "Grooveshark", action = "GetPlayList" }
+            //,new { songId = @"\d{6}" }
+        );
+
+        RouteTable.Routes.MapRoute(
+"Grooveshark Action to search for streaming music in TinySong",
+"Music/Search/{term}",
+new { controller = "Grooveshark", action = "Search" }
+            //,new { songId = @"\d{6}" }
+);
+
+        RouteTable.Routes.MapRoute(
     "Triphulcas Controller Associate media to user",
     "Facebook/AssociateNewMedia/{mediaId}",
        new { controller = "Facebook", action = "AssociateNewMedia" }

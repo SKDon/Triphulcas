@@ -1,0 +1,7 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/GramolaBase.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="Main" runat="server">
+
+	<umbraco:Macro Alias="GrooveSharkPlayer" runat="server" />
+	
+</asp:Content>
