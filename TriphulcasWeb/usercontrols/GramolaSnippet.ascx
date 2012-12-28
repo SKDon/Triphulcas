@@ -6,7 +6,7 @@
 
 <div class="sticker fullWidth">
     <div class="stickerHeading titillium">
-        <h1>Pincha un tema</h1>
+        <h1><%= Resources.Resource1.GramolaPlayerGreeting %></h1>
     </div>
 
 

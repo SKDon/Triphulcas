@@ -22,7 +22,7 @@ public class TriphulcasAppBase : ApplicationBase
 "Grooveshark Controller to play streaming music",
 "Music/PlaySong/{songId}",
 new { controller = "Grooveshark", action = "PlaySong" }
-//,new { songId = @"\d{6}" }
+            //,new { songId = @"\d{6}" }
 );
 
         RouteTable.Routes.MapRoute(
@@ -33,11 +33,31 @@ new { controller = "Grooveshark", action = "PlaySong" }
         );
 
         RouteTable.Routes.MapRoute(
+        "Grooveshark Controller to retrieve the detailed list of streaming music",
+        "Music/GetPlayListDetailed",
+        new { controller = "Grooveshark", action = "GetPlayListDetailed" }
+                    //,new { songId = @"\d{6}" }
+        );
+
+        RouteTable.Routes.MapRoute(
 "Grooveshark Action to search for streaming music in TinySong",
 "Music/Search/{term}",
 new { controller = "Grooveshark", action = "Search" }
             //,new { songId = @"\d{6}" }
 );
+
+        RouteTable.Routes.MapRoute(
+"Grooveshark Action to add a song to the play list",
+"Music/AddToQueue",
+new { controller = "Grooveshark", action = "AddToQueue" }
+);
+
+        RouteTable.Routes.MapRoute(
+"Grooveshark Action to remove a song to the play list",
+"Music/RemoveFromQueue",
+new { controller = "Grooveshark", action = "RemoveFromQueue" }
+);        
+
 
         RouteTable.Routes.MapRoute(
     "Triphulcas Controller Associate media to user",

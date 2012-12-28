@@ -261,21 +261,21 @@ div.leftCol li.active, div.leftCol li.active a, div.leftCol li.active code, div.
 
 .result .play, .loading, .pause {width: 29px; height: 29px; display: block; float: left; cursor: pointer;}
 
-.result .play {background:url("/img/result_play.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.result .play {background:url("/img/result_play.png") no-repeat scroll transparent; background-position: 0 -29px; margin-top: 10px;}
 .result .play:hover {background-position: right top;}
 .result .play:active {background-position:0 -58px;}
 
-.result .track {float: left; margin: 0 0 0 10px; cursor: pointer; padding: 3px 0 0 0; width: 300px;}
+.result .track {float: left; margin: 5px 0 0 10px; cursor: pointer; padding: 3px 0 0 0; width: 300px;}
 .result .track .song {font-size: 12px; margin: 0 0 3px 0;}
 .result .track .artist {font-size: 10px; margin: 0; color: #999;}
 
-.result .sharesong {width:59px; height: 29px; display: inline; float: right; cursor: pointer; background:url("/img/result_share.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.result .sharesong {width:59px; height: 29px; display: inline; float: right; cursor: pointer; background:url("/img/result_share.png") no-repeat scroll transparent; background-position: 0 -29px; margin-top: 10px;}
 .result .sharesong:hover {background-position: right top;}
 .result .sharesong:active {background-position:0 -58px;}
 
 .play {background:url("/img/result_play.png") no-repeat scroll right top transparent;}
 .loading {background:url("/img/result_loader.gif") no-repeat scroll 7px 5px transparent;}
-.pause {background:url("/img/result_pause.png") no-repeat scroll transparent; background-position: 0 -29px;}
+.pause {background:url("/img/result_pause.png") no-repeat scroll transparent; background-position: 0 -29px; margin-top: 10px;}
 .pause:hover {background-position: right top;}
 
 /* --------------------------------- */
@@ -285,3 +285,8 @@ div.leftCol li.active, div.leftCol li.active a, div.leftCol li.active code, div.
 #more_results span:hover {color: #316680;}
 #more_results span img {margin-right: 5px;}
 
+.thumbnail {
+float: right;
+margin-right: 20px;
+margin-top: 4px;
+}

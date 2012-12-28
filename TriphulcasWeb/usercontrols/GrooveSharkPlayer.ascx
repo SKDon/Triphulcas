@@ -112,6 +112,11 @@
             },
             testSong: function (songId) {
                 $.get('/Music/GetPlayList', function (list) {
+                    var pos = $.inArray(songId, list);
+                    if (pos != -1)
+                        list = $.grep(list, function (value) {
+                            return value != songId;
+                        });
                     list.splice(0, 0, songId);
                     window.triphulcasPlayer.settings.vars.songIDs = list.join(',');
                     //swfobject.embedSWF("http://grooveshark.com/songWidget.swf", "swfWrapper", "1", "1", "9.0.0", null, this.settings.vars, this.settings.params, this.settings.attributes);

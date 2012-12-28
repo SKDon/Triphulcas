@@ -4,11 +4,11 @@
             host: { search: "http://tinysong.com/s/", share: "?s=sh", shareLog: "?s=ls", shareEmail: "?s=e", requestAPIKey: "?s=apikey", clipboard: "swf/ZeroClipboard.swf", recaptcha: "?s=rc" }, clipboard: { cursor: true }, loading: { height: 12 }, messageSwitch: 500, scroll: { threshold: { top: 180, bottom: 220, nominal: $("div.header_wrapper").height() }, to: { top: 0, bottom: $("div.header_wrapper").height() }, duration: 150, moreSongsDuration: 150, easing: "linear" }, searchText: "Buscar", shareEmail: { up: 500, down: 200 },
             apiKey: { up: 500, down: 200 }, results: { up: 200, down: 1E3 }
         }, page: {
-            body: $("html, body"), content: $("#content_wrapper"), header: $("#header_wrapper"), loading: $("#loadinggraphic"), message: { className: $("#message_box"), text: $("#message_text") }, song: { play: "#content_wrapper ul.result div.play", pause: "#content_wrapper ul.result div.pause", loading: "#content_wrapper ul.result div.loading" }, clipboard: { body: $("#clipboard_click"), text: "span#clipboard_text", end: "span#clipboard_click_end" }, search: {
+            body: $("html, body"), content: $("#content_wrapper"), header: $("#header_wrapper"), loading: $("#loadinggraphic"), message: { className: $("#message_box"), text: $("#message_text") }, song: { play: "ul.result div.play", pause: "ul.result div.pause", loading: "ul.result div.loading" }, clipboard: { body: $("#clipboard_click"), text: "span#clipboard_text", end: "span#clipboard_click_end" }, search: {
                 general: $("#search_wrapper div#search_wrapper_bar"),
                 form: $("#search_form"), input: $("#search_input"), button: $("#icon_button"), more: "#more_results", moreText: "#more_results span", results: "#result_wrapper", resultsButton: ".recaptchaWrapper button", recaptchaWrapper: ".recaptchaWrapper", recaptchaChallenge: "#recaptcha_challenge_field", recaptchaResponse: "#recaptcha_response_field"
             }, share: {
-                link: $("ul.result"), log: $("ul#sharelinks li a"),
+                link: $("#content_wrapper ul.result"), log: $("ul#sharelinks li a"),
                 email: {
                     body: "div.email", link: "ul#sharelinks li.email a#email_link", textarea: "div.email div#textarea_wrapper", textareaText: "div.email div#textarea_wrapper textarea#personalMessage", input: "div.email input", button: "div.email button#submitEmail", form: "div.email form#emailForm", toAddr: "div.email input#toAddr", fromAddr: "div.email input#fromAddr", base62: "div.email input#base62", challenge: "input#recaptcha_challenge_field", response: "input#recaptcha_response_field", errors: {
                         emailError: "div.email div#email_error",
@@ -56,7 +56,24 @@
             });
             $(this.page.search.resultsButton).live("click", window.tinysong.searchCaptcha);
             this.page.share.link.live("click", function () {
-                window.tinysong.share($(this).attr("rel").split("-"))
+                //window.tinysong.share($(this).attr("rel").split("-"))
+
+                var song_id = $(this).find('.play').attr('rel') != undefined ? $(this).find('.play').attr('rel') : $(this).find('.pause').attr('rel');
+
+                $.ajax({
+                    url: '/Music/AddToQueue',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify({ SongID: song_id, SongName: $(this).find('.song').text(), ArtistName: $(this).find('.artist').text() }),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        // get the result and do some magic with it
+                        //var message = data.Message;
+
+                        //update updatepanel from client
+                        __doPostBack('UpdatePanel1', '');
+                    }
+                });
             });
             this.page.share.link.live("mouseout", function () {
                 $(this).find(".sharesong").removeClass("mouseover")

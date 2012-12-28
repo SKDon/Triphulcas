@@ -160,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pincha un tema.
+        /// </summary>
+        public static string GramolaPlayerGreeting {
+            get {
+                return ResourceManager.GetString("GramolaPlayerGreeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Últimos artículos.
         /// </summary>
         public static string LastArticles {
@@ -246,6 +255,15 @@ namespace Resources {
         public static string SnippetWelcomeTitle {
             get {
                 return ResourceManager.GetString("SnippetWelcomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temas en la gramola.
+        /// </summary>
+        public static string ThemesInQueue {
+            get {
+                return ResourceManager.GetString("ThemesInQueue", resourceCulture);
             }
         }
         

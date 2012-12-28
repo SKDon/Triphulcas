@@ -201,4 +201,10 @@
   <data name="UploadImagesLiteral" xml:space="preserve">
     <value>Aquí</value>
   </data>
+  <data name="GramolaPlayerGreeting" xml:space="preserve">
+    <value>Pincha un tema</value>
+  </data>
+  <data name="ThemesInQueue" xml:space="preserve">
+    <value>Temas en la gramola</value>
+  </data>
 </root>
