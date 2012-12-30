@@ -9,6 +9,11 @@
             </a>
         </div>
 
+<a class="popup" href="<%=GetFacebookPostUrl() %>">
+<img class="facebook_post" title="<%=Resources.Resource1.ShareOnFacebook %>" src="/img/nav_social_media_facebook.png" />
+</a>
+
+
 
 <script type="text/javascript">
 

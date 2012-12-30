@@ -59,9 +59,7 @@
     });
 
     $('#soundBadge').click(function () {
-        var isTriphulcas = '<%=(User!=null && User.IsInRole("Triphulcas"))%>';
-        if (isTriphulcas!=null && isTriphulcas.toLowerCase() == 'true')
-            location = "/gramola";
-    });
+        location = "/gramola";
+        });
 
 </script>

@@ -4,7 +4,7 @@
 
     <div id="masthead">
         
-		<umbraco:Macro Alias="ArticleEditButton" runat="server" />
+		<umbraco:Macro Alias="ArticleEditButton" runat="server" />			
 		
 		<a href="/"><img src="img/ko-logo.png" /></a>
     </div>

@@ -85,8 +85,8 @@ public partial class usercontrols_Authentication : System.Web.UI.UserControl
             if (OAuthWebSecurity.RegisteredClientData == null || OAuthWebSecurity.RegisteredClientData.Count == 0)
             {
                 OAuthWebSecurity.RegisterFacebookClient(
-                    appId: "397157543686506",
-                    appSecret: "3571703fc763bc1b6610fd6c408fd9ac");
+                    appId: Resources.Resource1.FacebookTriphulcasAppID,
+                    appSecret: Resources.Resource1.FacebookTriphulcasAppSecret);
             }
 
             OAuthWebSecurity.RequestAuthentication("facebook", "/authentication.aspx?comefromfucker=true");

@@ -124,6 +124,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;img src=&quot;/img/nav_social_media_detalle_facebook.png&quot; /&gt;&amp;nbsp;Publicación .
+        /// </summary>
+        public static string facebook_publish {
+            get {
+                return ResourceManager.GetString("facebook_publish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://graph.facebook.com/{0}/picture?type=large.
         /// </summary>
         public static string FacebookLargePictureUrl {
@@ -160,6 +169,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 397157543686506.
+        /// </summary>
+        public static string FacebookTriphulcasAppID {
+            get {
+                return ResourceManager.GetString("FacebookTriphulcasAppID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3571703fc763bc1b6610fd6c408fd9ac.
+        /// </summary>
+        public static string FacebookTriphulcasAppSecret {
+            get {
+                return ResourceManager.GetString("FacebookTriphulcasAppSecret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pincha un tema.
         /// </summary>
         public static string GramolaPlayerGreeting {
@@ -192,6 +219,15 @@ namespace Resources {
         public static string SeeYou {
             get {
                 return ResourceManager.GetString("SeeYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compartir en facebook.
+        /// </summary>
+        public static string ShareOnFacebook {
+            get {
+                return ResourceManager.GetString("ShareOnFacebook", resourceCulture);
             }
         }
         
@@ -273,6 +309,15 @@ namespace Resources {
         public static string TitleMainSnippet {
             get {
                 return ResourceManager.GetString("TitleMainSnippet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Triphulcas - Nota de prensa.
+        /// </summary>
+        public static string TriphulcasPressNote {
+            get {
+                return ResourceManager.GetString("TriphulcasPressNote", resourceCulture);
             }
         }
         

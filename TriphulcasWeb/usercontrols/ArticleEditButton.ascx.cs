@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using TriphulcasLib;
 using TriphulcasLib.UI;
 using umbraco.cms.businesslogic.relation;
+using umbraco.cms.businesslogic.web;
+using System.Text.RegularExpressions;
 
 public partial class usercontrols_ArticleEditButton : TriphulcasPublicControl
 {
@@ -29,5 +31,29 @@ public partial class usercontrols_ArticleEditButton : TriphulcasPublicControl
                         Visible = true;
             }
         }
+    }
+
+    public string GetFacebookPostUrl()
+    {
+        var article = new Document(umbraco.NodeFactory.Node.getCurrentNodeId());
+        return String.Format("https://www.facebook.com/dialog/feed?app_id={0}&link={1}&picture={2}&name={3}&caption={4}&description={5}&redirect_uri={6}",
+            Resources.Resource1.FacebookTriphulcasAppID,
+            Request.Url,
+            GetFirstImageUrl(article.getProperty("articulo").Value.ToString()),
+            article.getProperty("titulo").Value.ToString(),
+            article.getProperty("introduccion").Value.ToString(),
+            Resources.Resource1.TriphulcasPressNote,
+            String.Format("http://{0}/popupcloser?action=facebook_publish", Request.Url.Host)
+            );
+    }
+
+    private string GetFirstImageUrl(string htmlContent)
+    {
+        string defaultImageUrl = "/img/Tripulcas480.png";
+        string pattern = "<img src=\"(?<url>[^\"]+)\"";
+        var match = Regex.Match(htmlContent, pattern);
+        if (match.Success)
+            defaultImageUrl = String.Format("http://{0}{1}", Request.Url.Host, match.Groups["url"].Value);
+        return defaultImageUrl;
     }
 }

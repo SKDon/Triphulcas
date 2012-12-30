@@ -201,10 +201,25 @@
   <data name="UploadImagesLiteral" xml:space="preserve">
     <value>Aquí</value>
   </data>
+  <data name="FacebookTriphulcasAppID" xml:space="preserve">
+    <value>397157543686506</value>
+  </data>
+  <data name="FacebookTriphulcasAppSecret" xml:space="preserve">
+    <value>3571703fc763bc1b6610fd6c408fd9ac</value>
+  </data>
+  <data name="facebook_publish" xml:space="preserve">
+    <value>&lt;img src="/img/nav_social_media_detalle_facebook.png" /&gt;&amp;nbsp;Publicación </value>
+  </data>
   <data name="GramolaPlayerGreeting" xml:space="preserve">
     <value>Pincha un tema</value>
   </data>
+  <data name="ShareOnFacebook" xml:space="preserve">
+    <value>Compartir en facebook</value>
+  </data>
   <data name="ThemesInQueue" xml:space="preserve">
     <value>Temas en la gramola</value>
+  </data>
+  <data name="TriphulcasPressNote" xml:space="preserve">
+    <value>Triphulcas - Nota de prensa</value>
   </data>
 </root>

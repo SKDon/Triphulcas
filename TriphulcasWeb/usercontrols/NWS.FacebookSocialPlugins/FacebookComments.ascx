@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" EnableViewState="false" AutoEventWireup="true" CodeBehind="FacebookComments.ascx.cs" Inherits="NWS.FacebookSocialPlugins.UserControls.FacebookComments" %>
+<fb:comments xid="<%=UrlEncode(XId) %>" numposts="<%= NumberOfPosts %>" width="<%= PluginWidth %>" publish_feed="<%= PublishFeed %>"></fb:comments>
