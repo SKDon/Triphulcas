@@ -49,7 +49,7 @@ public partial class usercontrols_ArticleEditButton : TriphulcasPublicControl
 
     private string GetFirstImageUrl(string htmlContent)
     {
-        string defaultImageUrl = "/img/Tripulcas480.png";
+        string defaultImageUrl = String.Format("http://{0}/img/Tripulcas480.png", Request.Url.Host);
         string pattern = "<img src=\"(?<url>[^\"]+)\"";
         var match = Regex.Match(htmlContent, pattern);
         if (match.Success)
