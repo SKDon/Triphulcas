@@ -10,7 +10,7 @@
             <p class="smallprint">v2.2.0 - 14kb min+gz</p>
         </a>
     </div>--%>
-    <a href="/"><img class="homeLogo" src="img/TriphulcasBlanco.png" /></a>
+    <a href="/"><img class="homeLogo" src="/img/TriphulcasBlanco.png" /></a>
 </div>
 
 </asp:Content>

@@ -20,7 +20,7 @@
 <script type="text/javascript" src="scripts/titilliummaps.font.js"></script>
 <script type="text/javascript" src="scripts/json2.js"></script>
 <script type="text/javascript" src="scripts/functions.js"></script>
-		
+<script type="text/javascript" src="scripts/iframeChecker.js"></script>		
 
 <!--[if lt IE 7]>
 <script defer type="text/javascript" src="js/ie6pngfix.js"></script>
