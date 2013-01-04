@@ -69,17 +69,24 @@ namespace TriphulcasLib
                     roles = new string[] { "ForumUser" }; //Free read access to the forum
 
                     //Special NFORUM attributes
-                    var m = Member.GetCurrentMember();
-                    if (m != null)
+                    var membersfound = Member.GetMemberByName(model.UniqueLink, true);
+                    if (membersfound != null && membersfound.Length > 0)
                     {
-                        m.getProperty("forumUserTwitterUrl").Value = String.Empty;
-                        m.getProperty("forumUserPosts").Value = 0;
-                        m.getProperty("forumUserKarma").Value = 0;
-                        m.getProperty("forumUserAllowPrivateMessages").Value = 1;
-                        m.getProperty("forumUserLastPrivateMessage").Value = DateTime.Now;
-                        m.getProperty("forumUserIsAdmin").Value = 0;
-                        m.getProperty("forumUserIsBanned").Value = 0;
-                        m.getProperty("forumUserIsAuthorised").Value = 1;
+                        var m = membersfound[0];
+                        if (m != null)
+                        {
+                            m.getProperty("forumUserTwitterUrl").Value = String.Empty;
+                            m.getProperty("forumUserPosts").Value = 0;
+                            m.getProperty("forumUserKarma").Value = 0;
+                            m.getProperty("forumUserAllowPrivateMessages").Value = 1;
+                            m.getProperty("forumUserLastPrivateMessage").Value = DateTime.Now;
+                            m.getProperty("forumUserIsAdmin").Value = 0;
+                            m.getProperty("forumUserIsBanned").Value = 0;
+                            m.getProperty("forumUserIsAuthorised").Value = 1;
+
+                            var mg = MemberGroup.GetByName("ForumUser");
+                            m.AddGroup(mg.Id);
+                        }
                     }
                 }
             }

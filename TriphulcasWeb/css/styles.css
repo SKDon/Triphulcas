@@ -208,8 +208,11 @@ div.leftCol li.active, div.leftCol li.active a, div.leftCol li.active code, div.
 }
  /*salir profile*/
 .profile button
-{ padding: 0.2em 0.6em; margin-left: 0.5em;
-  vertical-align: middle;
+{ /*padding: 0.2em 0.6em; margin-left: 0.5em;
+  vertical-align: middle;*/
+padding: 0.2em 0.6em;
+float: right;
+margin-top: 10px;
 }
 
 .profile img

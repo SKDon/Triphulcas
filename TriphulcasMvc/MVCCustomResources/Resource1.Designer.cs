@@ -277,7 +277,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nos salen granos de verte..
+        ///   Looks up a localized string similar to Agradecemos tu visita al territorio triphulca. Somos muy olvidadizos, si ya nos conocemos pide tus galones en el foro..
         /// </summary>
         public static string SnippetWelcomeMessage {
             get {
