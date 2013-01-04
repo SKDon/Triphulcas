@@ -27,7 +27,7 @@ new { controller = "Grooveshark", action = "PlaySong" }
 
         RouteTable.Routes.MapRoute(
         "Grooveshark Controller to retrieve the list of streaming music",
-        "Music/GetPlayList",
+        "Music/GetPlayList/{token}",
         new { controller = "Grooveshark", action = "GetPlayList" }
             //,new { songId = @"\d{6}" }
         );
@@ -56,8 +56,19 @@ new { controller = "Grooveshark", action = "AddToQueue" }
 "Grooveshark Action to remove a song to the play list",
 "Music/RemoveFromQueue",
 new { controller = "Grooveshark", action = "RemoveFromQueue" }
-);        
+);
 
+        RouteTable.Routes.MapRoute(
+"Grooveshark Action to start playing the play list",
+"Music/StartPlaying",
+new { controller = "Grooveshark", action = "StartPlaying" }
+);
+
+        RouteTable.Routes.MapRoute(
+"Grooveshark Action to stop playing the play list",
+"Music/StopPlaying",
+new { controller = "Grooveshark", action = "StopPlaying" }
+);  
 
         RouteTable.Routes.MapRoute(
     "Triphulcas Controller Associate media to user",

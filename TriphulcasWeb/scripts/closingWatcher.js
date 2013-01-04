@@ -13,10 +13,14 @@ function wireUpEvents() {
      * onbeforeunload for IE and chrome
      * check http://stackoverflow.com/questions/1802930/setting-onbeforeunload-on-body-element-in-chrome-and-ie-using-jquery
      */
-    var dont_confirm_leave = 0; //set dont_confirm_leave to 1 when you want the user to be able to leave withou confirmation
+    var dont_confirm_leave = 1; //set dont_confirm_leave to 1 when you want the user to be able to leave withou confirmation
     var leave_message = 'You sure you want to leave?'
     function goodbye(e) {
         if (!validNavigation) {
+
+            //Notify server we stop playing music
+            window.triphulcasPlayer.tryStop();
+
             if (dont_confirm_leave !== 1) {
                 if (!e) e = window.event;
                 //e.cancelBubble is supported by IE - this will kill the bubbling process.

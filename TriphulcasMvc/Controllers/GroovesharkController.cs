@@ -42,19 +42,65 @@ namespace TriphulcasMvc.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
-        public ActionResult GetPlayList()
+        [HttpPost]
+        public ActionResult StartPlaying(string token)
         {
-            List<String> temasId = new List<string>();
-            Document[] temas = GetTemasInGramola();
-            foreach (var tema in temas)
-                temasId.Add(tema.getProperty("songID").Value.ToString());
+            string answer = "no way";
 
-            Random rnd = new Random();
-            string[] randomizedArray = temasId.ToArray<string>().OrderBy(x => rnd.Next()).ToArray();
+            if (GotTheBuck(token))                
+                answer = "cool";            
 
-            return Json(randomizedArray, JsonRequestBehavior.AllowGet);
+            return Json(new { message = answer }, JsonRequestBehavior.DenyGet);
+        }
 
+        [HttpPost]
+        public ActionResult StopPlaying(string token)
+        {
+            string answer = "cool";
+
+            if (GotTheBuck(token))
+                ReleaseTheBuck();
+
+            return Json(new { message = answer }, JsonRequestBehavior.DenyGet);
+        }
+
+        #region bucks stuff        
+
+        private bool GotTheBuck(string token)
+        {
+            if (Session["playing"] == null)
+                Session["playing"] = token;
+
+            if (Session["playing"] != null && (string)Session["playing"] == token)
+                return true;
+            else
+                return false;
+        }
+
+        private void ReleaseTheBuck()
+        {
+            Session["playing"] = null;
+        }
+
+        #endregion bucks stuff
+
+        [HttpGet]
+        public ActionResult GetPlayList(string token)
+        {
+            if (GotTheBuck(token))
+            {
+                List<String> temasId = new List<string>();
+                Document[] temas = GetTemasInGramola();
+                foreach (var tema in temas)
+                    temasId.Add(tema.getProperty("songID").Value.ToString());
+
+                Random rnd = new Random();
+                string[] randomizedArray = temasId.ToArray<string>().OrderBy(x => rnd.Next()).ToArray();
+
+                return Json(randomizedArray, JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(new[] { "" }, JsonRequestBehavior.AllowGet);
             //do the loading "Tema" content nodes stuff here
             //return Json(new[] { "392740", "327326", "31030824" }, JsonRequestBehavior.AllowGet);
         }
