@@ -62,4 +62,8 @@
         location = "/gramola";
         });
 
+    $('#forumBadge').click(function () {
+        location = "/forum";
+    });
+
 </script>
