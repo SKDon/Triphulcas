@@ -10,12 +10,14 @@
             <p class="smallprint">v2.2.0 - 14kb min+gz</p>
         </a>
     </div>--%>
-    <a href="/"><img src="img/ko-logo.png" /></a>
+    <a href="/"><img class="homeLogo" src="img/TriphulcasBlanco.png" /></a>
 </div>
 
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="Main" runat="server">
+	
+<umbraco:Macro Alias="ImageHomeSlider" runat="server" />
 	
 <umbraco:Macro Alias="IconsSnippet" runat="server"></umbraco:Macro>
 

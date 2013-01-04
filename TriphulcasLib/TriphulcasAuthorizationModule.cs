@@ -6,6 +6,7 @@ using System.Security.Principal;
 
 using Umbraco.Web;
 using umbraco.BusinessLogic;
+using umbraco.cms.businesslogic.member;
 
 namespace TriphulcasLib
 {
@@ -65,6 +66,21 @@ namespace TriphulcasLib
                 {
                     //New user
                     mUser = Membership.CreateUser(model.UniqueLink, model.AccesToken, model.EMail);
+                    roles = new string[] { "ForumUser" }; //Free read access to the forum
+
+                    //Special NFORUM attributes
+                    var m = Member.GetCurrentMember();
+                    if (m != null)
+                    {
+                        m.getProperty("forumUserTwitterUrl").Value = String.Empty;
+                        m.getProperty("forumUserPosts").Value = 0;
+                        m.getProperty("forumUserKarma").Value = 0;
+                        m.getProperty("forumUserAllowPrivateMessages").Value = 1;
+                        m.getProperty("forumUserLastPrivateMessage").Value = DateTime.Now;
+                        m.getProperty("forumUserIsAdmin").Value = 0;
+                        m.getProperty("forumUserIsBanned").Value = 0;
+                        m.getProperty("forumUserIsAuthorised").Value = 1;
+                    }
                 }
             }
 
@@ -97,9 +113,10 @@ namespace TriphulcasLib
                 mUser = Authorize(model, out roles);                
 
                 // Create the IPrinciple instance
-                IPrincipal principal = new FacebookPrincipal(model.UserName, roles)
+                IPrincipal principal = new FacebookPrincipal(model.UniqueLink, roles)
                 {
                     FirstName = model.FirstName,
+                    UserName = model.UserName,
                     AccesToken = model.AccesToken,
                     UniqueLink = model.UniqueLink,
                     EMail = model.EMail,

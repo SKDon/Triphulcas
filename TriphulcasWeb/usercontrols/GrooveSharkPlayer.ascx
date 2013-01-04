@@ -71,6 +71,7 @@
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/swfobject.js"></script>
+<script type="text/javascript" src="scripts/closingWatcher.js"></script>
 
 <div id="swfWrapper"></div>
 
@@ -131,6 +132,12 @@
 
         window.triphulcasPlayer.init();
     });
+
+    $(window).unload(function () {
+        alert('Handler for .unload() called.');
+    });
+
+
 
 </script>
 

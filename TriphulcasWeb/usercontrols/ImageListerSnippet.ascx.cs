@@ -67,6 +67,7 @@ public partial class ImageListerSnippet : TriphulcasPublicControl
 
         //kludgy & clumsy fast approach for popup-viewer
         Cache["gallery"] = _imagesByUser;
+        Cache["allImages"] = _allImages;
 
         users.DataSource = GetUserNamesWithImagesOrderedByCreationDate();
         users.DataBind();

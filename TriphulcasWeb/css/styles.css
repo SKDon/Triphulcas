@@ -297,3 +297,17 @@ margin-top: 4px;
 float: right;
 margin-right: 30px;
 }
+
+.homeLogo
+{
+margin: -50px 0 0 0;
+position: absolute;
+width: 700px;
+z-index: 100;
+}
+
+.articleLogo
+{
+width: 370px;
+margin: -50px 0 10px 0; 
+}

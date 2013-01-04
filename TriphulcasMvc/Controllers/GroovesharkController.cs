@@ -50,7 +50,10 @@ namespace TriphulcasMvc.Controllers
             foreach (var tema in temas)
                 temasId.Add(tema.getProperty("songID").Value.ToString());
 
-            return Json(temasId.ToArray<string>(), JsonRequestBehavior.AllowGet);
+            Random rnd = new Random();
+            string[] randomizedArray = temasId.ToArray<string>().OrderBy(x => rnd.Next()).ToArray();
+
+            return Json(randomizedArray, JsonRequestBehavior.AllowGet);
 
             //do the loading "Tema" content nodes stuff here
             //return Json(new[] { "392740", "327326", "31030824" }, JsonRequestBehavior.AllowGet);

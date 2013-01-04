@@ -410,6 +410,8 @@
             $("#content_wrapper").children().remove();
             typeof a == "function" && a()
         }, showContent: function (a, b, c) {
+            if (!this.equalState(["search"])) //TODO. chapucilla temporal
+                return;
             var d = $(window.tinysong.page.search.results);
             if (c) {
                 if (typeof a.rateLimit == "undefined" || !a.rateLimit) {
