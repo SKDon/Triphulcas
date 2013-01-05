@@ -51,8 +51,21 @@ li ul, li ol  { margin-bottom: 1em !important ; }
 .inline { display: inline; }
 .cursor { cursor: pointer }
 
-ul.tickIcons li { list-style-type: none; 
+ul.motoIcons li { list-style-type: none; 
 	background-image: url(../img/motoIcon25.png); background-repeat: no-repeat; background-position: 0px 6px;
+	margin-left: -0.5em; padding-left: 2em; line-height: 2em; margin-bottom: 0.3em; 
+}
+
+ul.motoIcons li img {
+	height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+ul.tickIcons li { list-style-type: none; 
+	background-image: url(../img/checkIcon.gif); background-repeat: no-repeat; background-position: 0px 6px;
 	margin-left: -0.5em; padding-left: 2em; line-height: 2em; margin-bottom: 0.3em; 
 }
 

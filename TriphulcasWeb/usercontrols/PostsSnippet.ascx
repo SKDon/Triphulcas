@@ -1,16 +1,18 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ArticlesSnippet.ascx.cs" Inherits="usercontrols_ArticlesSnippet" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PostsSnippet.ascx.cs" Inherits="usercontrols_PostListSnippet" %>
 
     <div class="<%=ClassName%>" style="width:<%=SnippetWidth%>px">
         <div class="stickerHeading titillium">
-            <h1><%= Resources.Resource1.LastArticles %></h1>
+            <h1><%= Resources.Resource1.LastPosts %></h1>
         </div>
-        <ul class="motoIcons">
+        <div id="liveExample" class="liveExample">
+        <ul class="tickIcons">
         <asp:Repeater ID="articles" ItemType="umbraco.cms.businesslogic.web.Document" runat="server">                
             <ItemTemplate>
-                <li><img src="<%#GetAuthorThumbnailUrl(Item.Id) %>" />&nbsp;<a href="<%#umbraco.library.NiceUrl(Item.Id) %>"><%#Item.Text %></a></li>
+                <li><img src="<%#GetAuthorThumbnailUrl((int)Item.getProperty("forumPostOwnedBy").Value) %>" />&nbsp;<a href="<%#umbraco.library.NiceUrl(Item.ParentId) %>"><%#String.Format("{0} - en {1}", GetPostDateTime(Item), GetTopicName(Item))%></a></li>
             </ItemTemplate>
         </asp:Repeater>
         </ul>
+            </div>
         
 <%--            <li>Free, open source (<a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>)</li>
             <li>Pure JavaScript &mdash; works with any web framework</li>
