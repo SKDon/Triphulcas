@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="GramolaSnippet.ascx.cs" Inherits="GramolaSnippet" %>
 
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript" src="scripts/ui.js"></script>
 
 
 <div class="sticker fullWidth">
@@ -22,15 +20,6 @@
     </div>
 
 
-
-    <script type="text/javascript" src="scripts/zeroclipboard.js"></script>
-    <script type="text/javascript" src="scripts/tinysong.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            window.tinysong.init();
-        });
-    </script>
         <div class="clear"></div>
     <div id="page_wrapper">
         <div class="box start" id="message_box">

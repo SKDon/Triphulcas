@@ -38,11 +38,11 @@
     function UpdateTriphulcasActions(isTriphulcas) {
         if (isTriphulcas!=null && isTriphulcas.toLowerCase() == 'true') {
             $('#articleBadge').show();            
-            $('#soundBadge').show();
+            //$('#soundBadge').show();
         }
         else {
             $('#articleBadge').hide();
-            $('#soundBadge').hide();
+            //$('#soundBadge').hide();
         }
     }
     

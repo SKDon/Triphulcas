@@ -18,7 +18,7 @@
                     <ItemTemplate>
                         <ul class="result" rel="<%#Item.SongInfo.SongID %>-search">
                             <li class="">
-                                <div class="sharesong" rel="<%#Item.SongInfo.SongID %>">
+                                <div class="sharesong" rel="<%#Item.SongInfo.SongID %>" style="display:<%#IsTriphulcas?"block":"none"%>">
                                     <span class="button"></span>
                                 </div>
 

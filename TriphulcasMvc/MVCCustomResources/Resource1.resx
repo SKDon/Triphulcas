@@ -222,4 +222,7 @@
   <data name="TriphulcasPressNote" xml:space="preserve">
     <value>Triphulcas - Nota de prensa</value>
   </data>
+  <data name="LastPosts" xml:space="preserve">
+    <value>Posts recientes en el foro</value>
+  </data>
 </root>

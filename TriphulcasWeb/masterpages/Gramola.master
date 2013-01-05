@@ -17,7 +17,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
 
     
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/ui.js"></script>
+
 	<umbraco:Macro Alias="GramolaSnippet" runat="server" />
+
+    <script type="text/javascript" src="scripts/zeroclipboard.js"></script>
+    <script type="text/javascript" src="scripts/tinysong.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.tinysong.init();
+        });
+    </script>
 	
 	<form runat="server">
 		<umbraco:Macro Alias="GramolaQueueSnippet" runat="server" />
