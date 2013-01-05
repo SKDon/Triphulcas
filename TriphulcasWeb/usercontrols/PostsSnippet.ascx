@@ -8,7 +8,7 @@
         <ul class="tickIcons">
         <asp:Repeater ID="articles" ItemType="umbraco.cms.businesslogic.web.Document" runat="server">                
             <ItemTemplate>
-                <li><img src="<%#GetAuthorThumbnailUrl((int)Item.getProperty("forumPostOwnedBy").Value) %>" />&nbsp;<a href="<%#umbraco.library.NiceUrl(Item.ParentId) %>"><%#String.Format("{0} - en {1}", GetPostDateTime(Item), GetTopicName(Item))%></a></li>
+                <li><img src="<%#GetAuthorThumbnailUrl((int)Item.getProperty("forumPostOwnedBy").Value) %>" />&nbsp;<a href="<%#umbraco.library.NiceUrl(Item.ParentId) %>"><%#String.Format("{0} en: {1}", GetPostDateTime(Item), GetTopicName(Item))%></a></li>
             </ItemTemplate>
         </asp:Repeater>
         </ul>
