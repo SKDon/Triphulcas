@@ -7,7 +7,7 @@
 <script type="text/javascript" src="scripts/closingWatcher.js"></script>
 
 <div id="swfWrapper"></div>
-<input type="hidden" id="antyForgeryToken" value="<%=Guid.NewGuid().ToString() %>"
+<input type="hidden" id="antyForgeryToken" value="<%=Guid.NewGuid().ToString() %>" />
 
 
 <%--

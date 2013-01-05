@@ -34,6 +34,7 @@ public partial class usercontrols_Snippet : TriphulcasSnippet
                         pImage.Src = String.Format(Resources.Resource1.FacebookPictureUrl, result.id);
                         pWelcome.InnerText = WelcomeMessage;
                         pLogout.Attributes.Remove("hidden");
+                        pLogout.Attributes["style"] = "display:block";
                     }
                     catch (FacebookOAuthException)
                     {

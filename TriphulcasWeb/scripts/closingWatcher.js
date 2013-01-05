@@ -4,6 +4,7 @@
  * Reference: http://stackoverflow.com/questions/1921941/close-kill-the-session-when-the-browser-or-tab-is-closed
  */
 var validNavigation = false;
+var musicStopped = false;
 
 function wireUpEvents() {
     /**
@@ -13,15 +14,18 @@ function wireUpEvents() {
      * onbeforeunload for IE and chrome
      * check http://stackoverflow.com/questions/1802930/setting-onbeforeunload-on-body-element-in-chrome-and-ie-using-jquery
      */
-    var dont_confirm_leave = 1; //set dont_confirm_leave to 1 when you want the user to be able to leave withou confirmation
-    var leave_message = 'You sure you want to leave?'
+    var dont_confirm_leave = 0; //set dont_confirm_leave to 1 when you want the user to be able to leave withou confirmation
+    var leave_message = '¿Nos vas a hacer este feo?'    
+
     function goodbye(e) {
         if (!validNavigation) {
 
-            //Notify server we stop playing music
-            window.triphulcasPlayer.tryStop();
-
             if (dont_confirm_leave !== 1) {
+                
+                //Notify server we stop playing music
+                window.triphulcasPlayer.tryStop();
+                musicStopped = true;
+
                 if (!e) e = window.event;
                 //e.cancelBubble is supported by IE - this will kill the bubbling process.
                 e.cancelBubble = true;
@@ -66,3 +70,11 @@ function wireUpEvents() {
 $(document).ready(function () {
     wireUpEvents();
 });
+
+$(window).bind('focus', function () {
+    if (musicStopped) {
+        window.triphulcasPlayer.tryInit();
+        musicStopped = false;
+    }
+});
+

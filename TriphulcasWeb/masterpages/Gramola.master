@@ -1,6 +1,9 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/GramolaBase.master" AutoEventWireup="true" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+
+    <script type="text/javascript" src="scripts/iframeChecker.js"></script>	
 
     <div id="masthead">
         

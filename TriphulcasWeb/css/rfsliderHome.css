@@ -1,4 +1,4 @@
-#placeholder{position:relative;height:400px;width:982px;overflow:visible !important;margin:0;margin-bottom:50px;padding:0;clear:both;opacity:0.4;border-radius: 5px;}
+#placeholder{position:relative;height:400px;width:982px;overflow:visible !important;margin:0;margin-bottom:50px;padding:0;clear:both;opacity:0.4;filter: alpha(opacity=40);/*forIE9*/border-radius: 5px;}
 #placeholder .rfslidemask{position:relative;overflow:hidden !important;margin:0;padding:0;clear:both;}
 #placeholder .rfslides{position:relative;display:block;float:left;margin:0px;padding:0px;margin-left:0px;}  
 #placeholder .rfslide{position:relative;display:block;float:left;margin:0px;padding:0px;background:#ccc;border-radius: 5px}

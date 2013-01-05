@@ -6,10 +6,10 @@
 	<p id="pProfile" class="profile" runat="server" visible="true">
         <img id="pImage" runat="server" src="/img/unknown.gif" />
         <span id="pWelcome" runat="server"></span>        
-        <button id="pLogout" runat="server" hidden><%= Resources.Resource1.Logout %></button>
+        <button id="pLogout" runat="server" hidden style="display:none;"><%= Resources.Resource1.Logout %></button>
 	</p>
     <%--Backup paragraph:--%>
-    <p class="profile" id="pHidden" hidden>  
+    <p class="profile" id="pHidden" hidden style="display:none;">  
         <%= Resources.Resource1.SeeYou %>     
         <img src="/img/unknown.gif" />
         <span><%= Resources.Resource1.SnippetComebackBeforeLink %> <a class="popup" href="/authentication.aspx"><%= Resources.Resource1.SnippetComebackLink %> </a>.</span>        
