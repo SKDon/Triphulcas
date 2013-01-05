@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posts recientes en el foro.
+        /// </summary>
+        public static string LastPosts {
+            get {
+                return ResourceManager.GetString("LastPosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Salir.
         /// </summary>
         public static string Logout {
