@@ -359,3 +359,4 @@ System.Reflection.TargetInvocationException: Se produjo una excepción en el dest
 2013-12-10 19:38:54,174 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
 2013-12-10 19:38:54,177 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree (took 2ms)
 2013-12-10 19:38:54,244 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 838ms)
+2013-12-10 19:48:14,254 [7] INFO  Umbraco.Web.UmbracoApplication - [Thread 30] Application shutdown. Reason: BinDirChangeOrDirectoryRename
