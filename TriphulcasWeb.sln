@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "TriphulcasWeb\", "{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "TriphulcasWeb", "{91AD0DF5-F9FB-4819-A0FF-B8D55236B479}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{54e665be-93c7-40cf-84f2-d7ed6b8690f6}|TriphulcasMvc.dll;{2ad1e6d7-eee0-4ef5-968f-98ef4c43b35e}|TriphulcasLib.dll;"
@@ -25,6 +27,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriphulcasMvc", "TriphulcasMvc\TriphulcasMvc.csproj", "{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriphulcasLib", "TriphulcasLib\TriphulcasLib.csproj", "{2AD1E6D7-EEE0-4EF5-968F-98EF4C43B35E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4B688AD2-CC37-475A-AC2A-FFF729CBA8F0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
