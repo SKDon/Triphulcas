@@ -175,7 +175,7 @@
     <value>con problemas</value>
   </data>
   <data name="DefaultAccessToken" xml:space="preserve">
-    <value>AAAFpNnJPsWoBAEa0Unb56xAfuK35GdnAsZAhDusBgMLCSZAeFLm1PDZBphaZCXLg1bsOYFnpDmLO1ijtV8K1I04lddKAw7F0WZAn9e46cggZDZD</value>
+    <value>CAACjNecWQWABAA3LxzcZBj8WnC1PtRTi9TaaK22wAGPLw0wHp6hrUjlUaaDLSj0vfXZAPxd6qG2nTktyZAEGEGhWtrIZBK6QHlzrpGPiFXM7m7uBZBsZBFM0ZBGO9VzXuOUIRmJMU1UmPvQgmxHLNUTTkXkcNBTY3EocmMuBAD4NVRQRjKlmjENCn5D2nNnA14ZD</value>
   </data>
   <data name="EditArticle" xml:space="preserve">
     <value>Editar</value>
@@ -202,10 +202,10 @@
     <value>Aquí</value>
   </data>
   <data name="FacebookTriphulcasAppID" xml:space="preserve">
-    <value>397157543686506</value>
+    <value>179451905589600</value>
   </data>
   <data name="FacebookTriphulcasAppSecret" xml:space="preserve">
-    <value>3571703fc763bc1b6610fd6c408fd9ac</value>
+    <value>e163f5db965a8081553a87eeada29e39</value>
   </data>
   <data name="facebook_publish" xml:space="preserve">
     <value>&lt;img src="/img/nav_social_media_detalle_facebook.png" /&gt;&amp;nbsp;Publicación </value>

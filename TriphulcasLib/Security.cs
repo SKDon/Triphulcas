@@ -14,7 +14,8 @@ namespace TriphulcasLib
     {
         string UserName { get; set; }
         string FirstName { get; set; }
-        string AccesToken { get; set; }
+        string FacebookId { get; set; }
+        string AccessToken { get; set; }
         string UniqueLink { get; set; }
         string EMail { get; set; }
 
@@ -45,7 +46,8 @@ namespace TriphulcasLib
 
         public string UserName { get; set; }
         public string FirstName { get; set; }
-        public string AccesToken { get; set; }
+        public string FacebookId { get; set; }
+        public string AccessToken { get; set; }
         public string UniqueLink { get; set; }
         public string EMail { get; set; }
         public MembershipUser MembershipUser { get; set; }
@@ -55,7 +57,7 @@ namespace TriphulcasLib
 
         public Member GetMember()
         {
-            return Member.GetMemberFromLoginNameAndPassword(UniqueLink, AccesToken);
+            return Member.GetMemberFromLoginNameAndPassword(UniqueLink, FacebookId);
         }
 
         #endregion
@@ -66,7 +68,8 @@ namespace TriphulcasLib
     {
         public string UserName { get; set; }
         public string FirstName { get; set; }
-        public string AccesToken { get; set; }
+        public string FacebookId { get; set; }
+        public string AccessToken { get; set; }
         public string UniqueLink { get; set; }
         public string EMail { get; set; }
     }

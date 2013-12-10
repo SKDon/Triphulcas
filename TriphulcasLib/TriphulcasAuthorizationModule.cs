@@ -49,13 +49,13 @@ namespace TriphulcasLib
 
             lock(locker) {
 
-                //if (Membership.ValidateUser(model.UniqueLink,model.AccesToken)) {
+                //if (Membership.ValidateUser(model.UniqueLink,model.FacebookId)) {
 
                 var col = Membership.FindUsersByName(model.UniqueLink);
                 if (col != null && col.Count > 0)
                     foreach (MembershipUser user in col)
                     {
-                        if (user.GetPassword() == model.AccesToken)
+                        if (user.GetPassword() == model.FacebookId)
                             mUser = user;
                     }
                 if (mUser != null)
@@ -65,7 +65,7 @@ namespace TriphulcasLib
                 if (mUser == null)
                 {
                     //New user
-                    mUser = Membership.CreateUser(model.UniqueLink, model.AccesToken, model.EMail);
+                    mUser = Membership.CreateUser(model.UniqueLink, model.FacebookId, model.EMail);
                     roles = new string[] { "ForumUser" }; //Free read access to the forum
 
                     //Special NFORUM attributes
@@ -98,8 +98,8 @@ namespace TriphulcasLib
         void context_PostAuthenticateRequest(object sender, EventArgs e)
         {
             //Disregard backoffice requests:
-            //TODO. Use GlobalSettings.RequestIsInUmbracoApplication(HttpContext.Current)!!
-            if (UmbracoContext.Current == null || UmbracoContext.Current.HttpContext.Request.Url.AbsolutePath.StartsWith("/umbraco")) //NOT WORKING!!!UmbracoContext.Current.IsFrontEndUmbracoRequest)
+            //TODO. Use GlobalSettings.RequestIsInUmbracoApplication(HttpContext.Current)!!            
+            if (UmbracoContext.Current == null || UmbracoContext.Current.HttpContext.Request.Url.AbsolutePath.StartsWith("/umbraco") || UmbracoContext.Current.HttpContext.Request.Url.AbsolutePath.StartsWith("/ScriptResource.axd")) //NOT WORKING!!!UmbracoContext.Current.IsFrontEndUmbracoRequest)
                 return;
 
             HttpContext context = (sender as HttpApplication).Context;
@@ -124,7 +124,8 @@ namespace TriphulcasLib
                 {
                     FirstName = model.FirstName,
                     UserName = model.UserName,
-                    AccesToken = model.AccesToken,
+                    FacebookId = model.FacebookId,
+                    AccessToken = model.AccessToken,
                     UniqueLink = model.UniqueLink,
                     EMail = model.EMail,
                     MembershipUser = mUser

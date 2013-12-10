@@ -53,7 +53,11 @@ public partial class usercontrols_PostListSnippet : TriphulcasSnippet
     {
         string thmbUrl = "/img/unknown.gif";
 
-        thmbUrl = String.Format(Resources.Resource1.FacebookSquarePictureUrl, new Member(documentId).Text);
+        try
+        {
+            thmbUrl = String.Format(Resources.Resource1.FacebookSquarePictureUrl, new Member(documentId).Text);
+        }
+        catch { }
 
         return thmbUrl;
     }    

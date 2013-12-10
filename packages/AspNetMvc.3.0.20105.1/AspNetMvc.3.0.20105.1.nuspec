@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AspNetMvc</id>
+    <version>3.0.20105.1</version>
+    <title>ASP.NET MVC 3</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <projectUrl>http://www.asp.net/mvc</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Legacy package, AspNetMvc is now included in the 'Microsoft.AspNet.Mvc' package.</description>
+    <summary>Legacy package, AspNetMvc is now included in the 'Microsoft.AspNet.Mvc' package.</summary>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="3.0.20105.1" />
+    </dependencies>
+  </metadata>
+</package>

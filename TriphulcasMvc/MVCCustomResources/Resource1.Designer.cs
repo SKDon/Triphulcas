@@ -97,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AAAFpNnJPsWoBAEa0Unb56xAfuK35GdnAsZAhDusBgMLCSZAeFLm1PDZBphaZCXLg1bsOYFnpDmLO1ijtV8K1I04lddKAw7F0WZAn9e46cggZDZD.
+        ///   Looks up a localized string similar to CAACjNecWQWABAA3LxzcZBj8WnC1PtRTi9TaaK22wAGPLw0wHp6hrUjlUaaDLSj0vfXZAPxd6qG2nTktyZAEGEGhWtrIZBK6QHlzrpGPiFXM7m7uBZBsZBFM0ZBGO9VzXuOUIRmJMU1UmPvQgmxHLNUTTkXkcNBTY3EocmMuBAD4NVRQRjKlmjENCn5D2nNnA14ZD.
         /// </summary>
         public static string DefaultAccessToken {
             get {
@@ -169,7 +169,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 397157543686506.
+        ///   Looks up a localized string similar to 179451905589600.
         /// </summary>
         public static string FacebookTriphulcasAppID {
             get {
@@ -178,7 +178,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3571703fc763bc1b6610fd6c408fd9ac.
+        ///   Looks up a localized string similar to e163f5db965a8081553a87eeada29e39.
         /// </summary>
         public static string FacebookTriphulcasAppSecret {
             get {

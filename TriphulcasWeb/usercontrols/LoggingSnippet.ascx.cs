@@ -25,11 +25,11 @@ public partial class usercontrols_Snippet : TriphulcasSnippet
             if (User.IsInRole("Triphulcas"))
                 WelcomeMessage = Resources.Resource1.SnippetTriphulcasWelcomeMessage;
 
-            if (!String.IsNullOrEmpty(User.AccesToken))
+            if (!String.IsNullOrEmpty(User.AccessToken))
                 {
                     try
                     {                        
-                        var client = new FacebookClient(User.AccesToken);
+                        var client = new FacebookClient(User.AccessToken);
                         dynamic result = client.Get("me", new { fields = "id" });
                         pImage.Src = String.Format(Resources.Resource1.FacebookPictureUrl, result.id);
                         pWelcome.InnerText = WelcomeMessage;

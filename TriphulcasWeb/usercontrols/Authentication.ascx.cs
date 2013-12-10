@@ -52,7 +52,8 @@ public partial class usercontrols_Authentication : System.Web.UI.UserControl
                     FirstName = first_name,
                     UniqueLink = link,
                     EMail = email,
-                    AccesToken = result.ExtraData["accesstoken"]
+                    FacebookId = result.ExtraData["id"],
+                    AccessToken = result.ExtraData["accesstoken"]
                 };
 
                 string userData = new JavaScriptSerializer().Serialize(model);

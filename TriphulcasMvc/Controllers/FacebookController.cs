@@ -32,7 +32,7 @@ namespace TriphulcasMvc.Controllers
                 if (User != null && User is FacebookPrincipal)
                 {
                     string target = String.IsNullOrEmpty(id) ? "me" : id;
-                    var client = new FacebookClient((User as FacebookPrincipal).AccesToken);
+                    var client = new FacebookClient((User as FacebookPrincipal).AccessToken);
                     dynamic result = client.Get(target, new { fields = "first_name,id" });
 
                     return Json(new
