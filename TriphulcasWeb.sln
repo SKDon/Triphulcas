@@ -22,6 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TriphulcasWeb", "Triphulcas
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "2759"
+		SlnRelativePath = "TriphulcasWeb\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriphulcasMvc", "TriphulcasMvc\TriphulcasMvc.csproj", "{54E665BE-93C7-40CF-84F2-D7ED6B8690F6}"
