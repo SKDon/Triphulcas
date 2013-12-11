@@ -69,7 +69,7 @@ namespace TriphulcasMvc.Controllers
             try
             {
                 string target = String.IsNullOrEmpty(id) ? "me" : id;
-                var client = new FacebookClient(Resources.Resource1.DefaultAccessToken);
+                var client = new FacebookClient((User as FacebookPrincipal).AccessToken);
                 dynamic result = client.Get(target, new { fields = "name,first_name,id" });
 
                 return Json(new
